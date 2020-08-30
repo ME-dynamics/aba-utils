@@ -1,6 +1,6 @@
 export { IError } from "./errorFactory";
 
-export { IResult } from "./result";
+export { IHttpResult , THttpVerbs, IResult} from "./httpResult";
 
 export { TDetectPlatform, TDetectX, TReactNativeEngine } from "./detectEnv";
 
