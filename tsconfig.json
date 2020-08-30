@@ -63,6 +63,6 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "exclude": ["./benchmarks", "./__tests__"],
+  "exclude": ["benchmarks", "__tests__", "dist"],
   
 }
