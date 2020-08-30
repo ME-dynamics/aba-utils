@@ -1,7 +1,7 @@
 export { detect } from "./src/detect-env";
 export { ErrorFactory } from "./src/errorFactory";
 export { secureRandomNumber } from "./src/random-digits";
-export { result } from "./src/result";
+export {  } from "./src/httpResult";
 export {
   IError,
   IResult,
