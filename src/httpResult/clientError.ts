@@ -89,3 +89,7 @@ export function ImATeapot<T>(args: IResult<T>): IHttpResult<T> {
 export function insufficientSpaceOnResource<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE);
 }
+
+export function methodFailure<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.METHOD_FAILURE);
+}
