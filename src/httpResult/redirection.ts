@@ -38,3 +38,7 @@ export function useProxy(args: IUrl): IHttpResult<IUrl> {
 export function temporaryRedirect(args: IUrl): IHttpResult<IUrl> {
     return redirection(args, StatusCodes.TEMPORARY_REDIRECT)
 }
+
+export function permanentRedirect(args: IUrl): IHttpResult<IUrl> {
+    return redirection(args, StatusCodes.PERMANENT_REDIRECT)
+}
