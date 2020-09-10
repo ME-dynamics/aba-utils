@@ -22,7 +22,7 @@ export function paymentRequired<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.PAYMENT_REQUIRED);
 }
 
-export function بorbidden<T>(args: IResult<T>): IHttpResult<T> {
+export function forbidden<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.FORBIDDEN);
 }
 
@@ -46,7 +46,7 @@ export function requestTimeout<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.REQUEST_TIMEOUT);
 }
 
-export function Conflict<T>(args: IResult<T>): IHttpResult<T> {
+export function conflict<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.CONFLICT);
 }
 
@@ -98,7 +98,7 @@ export function unprocessableEntity<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.UNPROCESSABLE_ENTITY);
 }
 
-export function Locked<T>(args: IResult<T>): IHttpResult<T> {
+export function locked<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.LOCKED);
 }
 

@@ -22,5 +22,7 @@ export function noContent<T>(args: IResult<T>): IHttpResult<T> {
   return success(args, StatusCodes.NO_CONTENT);
 }
 
-
+export function accepted<T>(args: IResult<T>): IHttpResult<T> {
+  return success(args, StatusCodes.ACCEPTED);
+}
 
