@@ -33,3 +33,7 @@ export function notFound<T>(args: IResult<T>): IHttpResult<T> {
 export function methodNotAllowed<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.METHOD_NOT_ALLOWED);
 }
+
+export function notAcceptable<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.NOT_ACCEPTABLE);
+}
