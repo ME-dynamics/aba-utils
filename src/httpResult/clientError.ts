@@ -45,3 +45,7 @@ export function proxyAuthenticationRequired<T>(args: IResult<T>): IHttpResult<T>
 export function requestTimeout<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.REQUEST_TIMEOUT);
 }
+
+export function Conflict<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.CONFLICT);
+}
