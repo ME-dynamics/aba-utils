@@ -33,3 +33,7 @@ export function nonAuthoritativeInformation<T>(args: IResult<T>): IHttpResult<T>
 export function resetContent<T>(args: IResult<T>): IHttpResult<T> {
   return success(args, StatusCodes.RESET_CONTENT);
 }
+
+export function partialContent<T>(args: IResult<T>): IHttpResult<T> {
+  return success(args, StatusCodes.PARTIAL_CONTENT);
+}
