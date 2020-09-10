@@ -77,3 +77,7 @@ export function unsupportedMediaType<T>(args: IResult<T>): IHttpResult<T> {
 export function requestedRangeNotSatisfiable<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.REQUESTED_RANGE_NOT_SATISFIABLE);
 }
+
+export function expectationFailed<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.EXPECTATION_FAILED);
+}
