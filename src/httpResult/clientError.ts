@@ -22,10 +22,14 @@ export function paymentRequired<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.PAYMENT_REQUIRED);
 }
 
-export function Forbidden<T>(args: IResult<T>): IHttpResult<T> {
+export function بorbidden<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.FORBIDDEN);
 }
 
 export function notFound<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.NOT_FOUND);
+}
+
+export function methodNotAllowed<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.METHOD_NOT_ALLOWED);
 }
