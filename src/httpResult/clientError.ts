@@ -117,3 +117,7 @@ export function tooManyRequests<T>(args: IResult<T>): IHttpResult<T> {
 export function requestHeaderFieldsTooLarge<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.REQUEST_HEADER_FIELDS_TOO_LARGE);
 }
+
+export function unavailableForLegalReasons<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.UNAVAILABLE_FOR_LEGAL_REASONS);
+}
