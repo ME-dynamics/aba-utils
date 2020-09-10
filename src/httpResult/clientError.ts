@@ -101,3 +101,7 @@ export function unprocessableEntity<T>(args: IResult<T>): IHttpResult<T> {
 export function Locked<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.LOCKED);
 }
+
+export function failedDependency<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.FAILED_DEPENDENCY);
+}
