@@ -12,7 +12,6 @@ export interface IHttpResult<T> {
 }
 
 export interface IUrl {
-  title: string;
   url : string;
 }
 

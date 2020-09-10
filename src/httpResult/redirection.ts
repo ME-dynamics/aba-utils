@@ -2,11 +2,10 @@ import { StatusCodes } from "http-status-codes";
 import { IHttpResult, IUrl } from "../types";
 
 function redirection(args: IUrl, code: number): IHttpResult<IUrl> {
-    const  { url, title } = args;
+    const  { url } = args;
     return {
         code,
         payload: {
-            title,
             url
         }
     }
@@ -28,3 +27,10 @@ export function seeOther(args: IUrl): IHttpResult<IUrl> {
     return redirection(args, StatusCodes.SEE_OTHER)
 }
 
+export function notModified(args: IUrl): IHttpResult<IUrl> {
+    return redirection(args, StatusCodes.NOT_MODIFIED)
+}
+
+export function useProxy(args: IUrl): IHttpResult<IUrl> {
+    return redirection(args, StatusCodes.USE_PROXY)
+}
