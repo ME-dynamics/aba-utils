@@ -22,3 +22,4 @@ export function notImplemented<T>(args: IResult<T>): IHttpResult<T> {
 export function badGateway<T>(args: IResult<T>): IHttpResult<T> {
     return serverError(args, StatusCodes.BAD_GATEWAY);
 }
+
