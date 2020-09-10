@@ -34,3 +34,7 @@ export function gatewayTimeout<T>(args: IResult<T>): IHttpResult<T> {
 export function httpVersionNotSupported<T>(args: IResult<T>): IHttpResult<T> {
     return serverError(args, StatusCodes.HTTP_VERSION_NOT_SUPPORTED);
 }
+
+export function insufficientStorage<T>(args: IResult<T>): IHttpResult<T> {
+    return serverError(args, StatusCodes.INSUFFICIENT_STORAGE);
+}
