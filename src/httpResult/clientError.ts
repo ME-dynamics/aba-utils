@@ -105,3 +105,7 @@ export function Locked<T>(args: IResult<T>): IHttpResult<T> {
 export function failedDependency<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.FAILED_DEPENDENCY);
 }
+
+export function preconditionRequired<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.PRECONDITION_REQUIRED);
+}
