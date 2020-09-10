@@ -53,3 +53,7 @@ export function Conflict<T>(args: IResult<T>): IHttpResult<T> {
 export function gone<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.GONE);
 }
+
+export function lengthRequired<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.LENGTH_REQUIRED);
+}
