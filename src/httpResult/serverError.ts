@@ -38,3 +38,7 @@ export function httpVersionNotSupported<T>(args: IResult<T>): IHttpResult<T> {
 export function insufficientStorage<T>(args: IResult<T>): IHttpResult<T> {
     return serverError(args, StatusCodes.INSUFFICIENT_STORAGE);
 }
+
+export function networkAuthenticationRequired<T>(args: IResult<T>): IHttpResult<T> {
+    return serverError(args, StatusCodes.NETWORK_AUTHENTICATION_REQUIRED);
+}
