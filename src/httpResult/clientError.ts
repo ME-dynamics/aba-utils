@@ -113,3 +113,7 @@ export function preconditionRequired<T>(args: IResult<T>): IHttpResult<T> {
 export function tooManyRequests<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.TOO_MANY_REQUESTS);
 }
+
+export function requestHeaderFieldsTooLarge<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.REQUEST_HEADER_FIELDS_TOO_LARGE);
+}
