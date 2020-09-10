@@ -69,3 +69,7 @@ export function requestEntityTooLarge<T>(args: IResult<T>): IHttpResult<T> {
 export function requestURITooLong<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.REQUEST_URI_TOO_LONG);
 }
+
+export function unsupportedMediaType<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.UNSUPPORTED_MEDIA_TYPE);
+}
