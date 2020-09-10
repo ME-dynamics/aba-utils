@@ -21,3 +21,7 @@ export function unauthorized<T>(args: IResult<T>): IHttpResult<T> {
 export function paymentRequired<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.PAYMENT_REQUIRED);
 }
+
+export function Forbidden<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.FORBIDDEN);
+}
