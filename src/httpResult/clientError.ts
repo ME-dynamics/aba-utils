@@ -97,3 +97,7 @@ export function methodFailure<T>(args: IResult<T>): IHttpResult<T> {
 export function unprocessableEntity<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.UNPROCESSABLE_ENTITY);
 }
+
+export function Locked<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.LOCKED);
+}
