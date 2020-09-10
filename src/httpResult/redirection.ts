@@ -1,10 +1,10 @@
 import { StatusCodes } from "http-status-codes";
-import { IHttpResult, IResult, IUrl } from "../types";
+import { IHttpResult, IUrl } from "../types";
 
-export function movedPermanently(args: IUrl): IHttpResult<IUrl> {
+function redirection(args: IUrl, code: number): IHttpResult<IUrl> {
     const  { url, title } = args;
     return {
-        code: StatusCodes.MOVED_PERMANENTLY,
+        code,
         payload: {
             title,
             url
@@ -12,14 +12,7 @@ export function movedPermanently(args: IUrl): IHttpResult<IUrl> {
     }
 }
 
-export function movedTemporarily(args: IUrl): IHttpResult<IUrl> {
-    const  { url, title } = args;
-    return {
-        code: StatusCodes.MOVED_TEMPORARILY,
-        payload: {
-            title,
-            url
-        }
-    }
+export function movedPermenantly(args: IUrl): IHttpResult<IUrl> {
+    return redirection(args, StatusCodes.MOVED_PERMANENTLY)
 }
 
