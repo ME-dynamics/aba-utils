@@ -26,3 +26,6 @@ export function accepted<T>(args: IResult<T>): IHttpResult<T> {
   return success(args, StatusCodes.ACCEPTED);
 }
 
+export function nonAuthoritativeInformation<T>(args: IResult<T>): IHttpResult<T> {
+  return success(args, StatusCodes.NON_AUTHORITATIVE_INFORMATION);
+}
