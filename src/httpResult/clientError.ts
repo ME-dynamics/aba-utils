@@ -81,3 +81,7 @@ export function requestedRangeNotSatisfiable<T>(args: IResult<T>): IHttpResult<T
 export function expectationFailed<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.EXPECTATION_FAILED);
 }
+
+export function ImATeapot<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.IM_A_TEAPOT);
+}
