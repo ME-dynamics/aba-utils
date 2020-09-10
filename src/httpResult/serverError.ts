@@ -30,3 +30,7 @@ export function serviceUnavailable<T>(args: IResult<T>): IHttpResult<T> {
 export function gatewayTimeout<T>(args: IResult<T>): IHttpResult<T> {
     return serverError(args, StatusCodes.GATEWAY_TIMEOUT);
 }
+
+export function httpVersionNotSupported<T>(args: IResult<T>): IHttpResult<T> {
+    return serverError(args, StatusCodes.HTTP_VERSION_NOT_SUPPORTED);
+}
