@@ -37,3 +37,7 @@ export function methodNotAllowed<T>(args: IResult<T>): IHttpResult<T> {
 export function notAcceptable<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.NOT_ACCEPTABLE);
 }
+
+export function proxyAuthenticationRequired<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.PROXY_AUTHENTICATION_REQUIRED);
+}
