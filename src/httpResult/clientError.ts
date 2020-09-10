@@ -109,3 +109,7 @@ export function failedDependency<T>(args: IResult<T>): IHttpResult<T> {
 export function preconditionRequired<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.PRECONDITION_REQUIRED);
 }
+
+export function tooManyRequests<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.TOO_MANY_REQUESTS);
+}
