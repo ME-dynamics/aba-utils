@@ -29,3 +29,7 @@ export function accepted<T>(args: IResult<T>): IHttpResult<T> {
 export function nonAuthoritativeInformation<T>(args: IResult<T>): IHttpResult<T> {
   return success(args, StatusCodes.NON_AUTHORITATIVE_INFORMATION);
 }
+
+export function resetContent<T>(args: IResult<T>): IHttpResult<T> {
+  return success(args, StatusCodes.RESET_CONTENT);
+}
