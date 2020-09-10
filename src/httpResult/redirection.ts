@@ -1,12 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { IHttpResult, IResult } from "../types";
-
-interface IUrl {
-    title: string;
-    url : string;
-} //  TODO, alireza: move this to types 
-
-
+import { IHttpResult, IResult, IUrl } from "../types";
 
 export function movedPermanently(args: IUrl): IHttpResult<IUrl> {
     const  { url, title } = args;
@@ -18,3 +11,15 @@ export function movedPermanently(args: IUrl): IHttpResult<IUrl> {
         }
     }
 }
+
+export function movedTemporarily(args: IUrl): IHttpResult<IUrl> {
+    const  { url, title } = args;
+    return {
+        code: StatusCodes.MOVED_TEMPORARILY,
+        payload: {
+            title,
+            url
+        }
+    }
+}
+
