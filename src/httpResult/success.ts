@@ -37,3 +37,7 @@ export function resetContent<T>(args: IResult<T>): IHttpResult<T> {
 export function partialContent<T>(args: IResult<T>): IHttpResult<T> {
   return success(args, StatusCodes.PARTIAL_CONTENT);
 }
+
+export function multiStatus<T>(args: IResult<T>): IHttpResult<T> {
+  return success(args, StatusCodes.MULTI_STATUS);
+}
