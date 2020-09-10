@@ -1,6 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 
 export interface IResult<T> {
+  success: boolean;
   payload?: T;
   error?: string; 
 }
