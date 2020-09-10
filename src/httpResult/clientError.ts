@@ -49,3 +49,7 @@ export function requestTimeout<T>(args: IResult<T>): IHttpResult<T> {
 export function Conflict<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.CONFLICT);
 }
+
+export function gone<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.GONE);
+}
