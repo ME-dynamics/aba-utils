@@ -73,3 +73,7 @@ export function requestURITooLong<T>(args: IResult<T>): IHttpResult<T> {
 export function unsupportedMediaType<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.UNSUPPORTED_MEDIA_TYPE);
 }
+
+export function requestedRangeNotSatisfiable<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.REQUESTED_RANGE_NOT_SATISFIABLE);
+}
