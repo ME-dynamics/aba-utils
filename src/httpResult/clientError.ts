@@ -85,3 +85,7 @@ export function expectationFailed<T>(args: IResult<T>): IHttpResult<T> {
 export function ImATeapot<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.IM_A_TEAPOT);
 }
+
+export function insufficientSpaceOnResource<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE);
+}
