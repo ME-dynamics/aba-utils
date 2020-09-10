@@ -61,3 +61,7 @@ export function lengthRequired<T>(args: IResult<T>): IHttpResult<T> {
 export function preconditionFailed<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.PRECONDITION_FAILED);
 }
+
+export function requestEntityTooLarge<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.REQUEST_TOO_LONG);
+}
