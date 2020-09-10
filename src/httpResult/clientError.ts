@@ -25,3 +25,7 @@ export function paymentRequired<T>(args: IResult<T>): IHttpResult<T> {
 export function Forbidden<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.FORBIDDEN);
 }
+
+export function notFound<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.NOT_FOUND);
+}
