@@ -3,7 +3,7 @@ import { badRequest, unauthorized, paymentRequired, forbidden, notFound, methodN
 import { internalServerError, notImplemented, badGateway, serviceUnavailable, gatewayTimeout, httpVersionNotSupported, insufficientStorage, networkAuthenticationRequired } from "./serverError"
 import { multipleChoices, movedPermenantly, movedTemporarily, seeOther, notModified, useProxy, temporaryRedirect, permanentRedirect } from "./redirection"
 import { IResult } from "../types";
-// TODO: return redirection,
+
 export const httpResult = {
     success: {
         ok,
@@ -65,9 +65,6 @@ export const httpResult = {
         unavailableForLegalReasons
     }
 }
-
-
-
 
 export function result<T>(args: IResult<T>): IResult<T> {
     return {
