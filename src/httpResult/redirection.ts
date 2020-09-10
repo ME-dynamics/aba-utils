@@ -22,5 +22,9 @@ export function movedPermenantly(args: IUrl): IHttpResult<IUrl> {
 
 export function movedTemporarily(args: IUrl): IHttpResult<IUrl> {
     return redirection(args, StatusCodes.MOVED_TEMPORARILY)
-
 }
+
+export function seeOther(args: IUrl): IHttpResult<IUrl> {
+    return redirection(args, StatusCodes.SEE_OTHER)
+}
+
