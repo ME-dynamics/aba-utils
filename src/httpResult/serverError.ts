@@ -26,3 +26,7 @@ export function badGateway<T>(args: IResult<T>): IHttpResult<T> {
 export function serviceUnavailable<T>(args: IResult<T>): IHttpResult<T> {
     return serverError(args, StatusCodes.SERVICE_UNAVAILABLE);
 }
+
+export function gatewayTimeout<T>(args: IResult<T>): IHttpResult<T> {
+    return serverError(args, StatusCodes.GATEWAY_TIMEOUT);
+}
