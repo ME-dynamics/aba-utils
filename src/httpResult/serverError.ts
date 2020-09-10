@@ -23,3 +23,6 @@ export function badGateway<T>(args: IResult<T>): IHttpResult<T> {
     return serverError(args, StatusCodes.BAD_GATEWAY);
 }
 
+export function serviceUnavailable<T>(args: IResult<T>): IHttpResult<T> {
+    return serverError(args, StatusCodes.SERVICE_UNAVAILABLE);
+}
