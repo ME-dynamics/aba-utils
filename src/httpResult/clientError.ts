@@ -57,3 +57,7 @@ export function gone<T>(args: IResult<T>): IHttpResult<T> {
 export function lengthRequired<T>(args: IResult<T>): IHttpResult<T> {
   return clientError(args, StatusCodes.LENGTH_REQUIRED);
 }
+
+export function preconditionFailed<T>(args: IResult<T>): IHttpResult<T> {
+  return clientError(args, StatusCodes.PRECONDITION_FAILED);
+}
