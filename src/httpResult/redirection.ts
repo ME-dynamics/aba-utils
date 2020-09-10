@@ -34,3 +34,7 @@ export function notModified(args: IUrl): IHttpResult<IUrl> {
 export function useProxy(args: IUrl): IHttpResult<IUrl> {
     return redirection(args, StatusCodes.USE_PROXY)
 }
+
+export function temporaryRedirect(args: IUrl): IHttpResult<IUrl> {
+    return redirection(args, StatusCodes.TEMPORARY_REDIRECT)
+}
