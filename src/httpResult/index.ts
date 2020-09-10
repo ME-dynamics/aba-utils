@@ -1,4 +1,4 @@
-import { created, noContent, ok } from "./success"
+import { created, noContent, ok, accepted, nonAuthoritativeInformation, resetContent, partialContent, multiStatus } from "./success"
 import { badRequest, unauthorized, paymentRequired, forbidden, notFound, methodNotAllowed, notAcceptable, proxyAuthenticationRequired, requestTimeout, conflict, gone, lengthRequired, preconditionFailed, requestEntityTooLarge, requestURITooLong, unsupportedMediaType, requestedRangeNotSatisfiable, expectationFailed, ImATeapot, insufficientSpaceOnResource, methodFailure, unprocessableEntity, locked, failedDependency, tooManyRequests, requestHeaderFieldsTooLarge, unavailableForLegalReasons } from "./clientError"
 
 import { IResult } from "../types";
@@ -7,7 +7,12 @@ export const httpResult = {
     success: {
         ok,
         noContent,
-        created
+        created,
+        accepted,
+        nonAuthoritativeInformation,
+        resetContent,
+        partialContent,
+        multiStatus
     },
     clientError: {
         badRequest,
