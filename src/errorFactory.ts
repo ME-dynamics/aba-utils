@@ -1,32 +1,38 @@
-import { nanoid } from "nanoid";
 
+import { detect } from "./detect-env";
 import {IError } from "./types";
 
-export class ErrorFactory extends Error{
-  constructor(args: IError) {
-    const {
-      error,
-      message,
-      detail,
-      errorId = nanoid(),
-      nativeError,
-      path,
-      timestamp = Date.now(),
-    } = args;
-    super(message);
-    this.errorId = errorId;
-    this.error = error;
-    this.message = message;
-    this.detail = detail;
-    this.nativeError = nativeError;
-    this.path = path;
-    this.timestamp = timestamp;
+export function buildErrorFactory() {
+  const isNode = detect() === "node";
+  return class ErrorFactory extends Error{
+    constructor(args: IError) {
+      const {
+        name,
+        message,
+        detail,
+        nativeError,
+        path,
+        timestamp = Date.now(),
+      } = args;
+      super(message);
+      this.name = name;
+      this.message = message;
+      this.detail = detail;
+      this.nativeError = nativeError;
+      this.path = path;
+      this.timestamp = timestamp;
+      if(isNode) {
+        Error.captureStackTrace(this);
+      }
+      
+    }
+    name: string;
+    message: string;
+    detail?: string;
+    errorId?: string;
+    nativeError?: Error;
+    path?: string;
+    timestamp?: number;
   }
-  error: string;
-  message: string;
-  detail?: string;
-  errorId?: string;
-  nativeError?: Error;
-  path?: string;
-  timestamp?: number;
+  
 }
