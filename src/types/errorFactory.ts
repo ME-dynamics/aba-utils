@@ -1,12 +1,10 @@
 
 export interface IError {
-    errorId?: string;
-    timestamp?: number;
-    error: string;
+    name: string;
     message: string;
     detail?: string;
     path?: string;
     nativeError? : Error;
-    
+    timestamp?: number;
 }
 
