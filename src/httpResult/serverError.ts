@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { IHttpResult, IResult, IUrl } from "../types";
+import { IHttpResult, IResult } from "../types";
 
 
 function serverError<T>(args: IResult<T>, code: number): IHttpResult<T> {
