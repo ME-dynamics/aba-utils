@@ -1,15 +1,20 @@
 import { TReactNativeEngine } from '../types'
 declare const global: {HermesInternal: null | unknown};
 export function detectReactNative() {
-  if (
-    typeof document === "undefined" &&
-    typeof navigator !== "undefined" &&
-    navigator.product === "ReactNative"
-  ) {
-      return true
-  }else {
-      return false;
-  }
+    try {
+        if (
+            typeof document === "undefined" &&
+            typeof navigator !== "undefined" &&
+            navigator.product === "ReactNative"
+          ) {
+              return true
+          }else {
+              return false;
+          }
+    } catch (error) {
+        return false;
+    }
+  
 }
 
 
