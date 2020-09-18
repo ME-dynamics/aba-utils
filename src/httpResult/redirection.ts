@@ -3,6 +3,7 @@ import { IHttpResult, IUrl } from "../types";
 
 function redirection(args: IUrl, code: number): IHttpResult<IUrl> {
     const  { url } = args;
+    if(!url) throw new Error("url must be defined")
     return {
         code,
         payload: {
