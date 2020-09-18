@@ -57,7 +57,6 @@ import {
   temporaryRedirect,
   permanentRedirect,
 } from "./redirection";
-import { IResult } from "../types";
 
 export const httpResult = {
   success: {
@@ -121,10 +120,3 @@ export const httpResult = {
   },
 };
 
-export function result<T>(args: IResult<T>): IResult<T> {
-  return {
-    success: args.success,
-    payload: args.payload,
-    error: args.error,
-  };
-}
