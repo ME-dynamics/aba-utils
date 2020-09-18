@@ -15,7 +15,7 @@ export function multipleChoices(args: IUrl): IHttpResult<IUrl> {
     return redirection(args, StatusCodes.MULTIPLE_CHOICES)
 }
 
-export function movedPermenantly(args: IUrl): IHttpResult<IUrl> {
+export function movedPermanently(args: IUrl): IHttpResult<IUrl> {
     return redirection(args, StatusCodes.MOVED_PERMANENTLY)
 }
 
