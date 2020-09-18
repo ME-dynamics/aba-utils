@@ -1,7 +1,9 @@
+import { buildErrorFactory } from "./src/errorFactory";
+
+export const ErrorFactory = buildErrorFactory();
 export { detect } from "./src/detect-env";
-export { ErrorFactory } from "./src/errorFactory";
 export { secureRandomNumber } from "./src/random-digits";
-export {  } from "./src/httpResult";
+export { httpResult } from "./src/httpResult";
 export {
   IError,
   IResult,
