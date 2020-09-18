@@ -1,5 +1,5 @@
 import { cryptoRandom } from "./cryptoRandom";
-import { ErrorFactory } from '../errorFactory'
+import { ErrorFactory } from '../../'
 import {detect } from '../detect-env';
 import {calculateParameters } from './calculateParameters';
 import { ISecureRandomNumber } from '../types';
@@ -9,7 +9,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
    
     if (!min) {
         throw new ErrorFactory({
-            error: "minNotDefined",
+            name: "minNotDefined",
             message: "you should define min value",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -18,7 +18,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (!max) {
         throw  new ErrorFactory({
-            error: "maxNotDefined",
+            name: "maxNotDefined",
             message: "you should define max value",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -27,7 +27,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (min % 1 !== 0) {
         throw new ErrorFactory({
-            error: "minNotInteger",
+            name: "minNotInteger",
             message: "you should define min as an integer",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -36,7 +36,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (max % 1 !== 0) {
         throw new ErrorFactory({
-            error: "maxNotInteger",
+            name: "maxNotInteger",
             message: "you should define max as an integer",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -45,7 +45,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (!(max > min)) {
         throw new ErrorFactory({
-            error: "maxLowerThanMin",
+            name: "maxLowerThanMin",
             message: "max must be greater than min",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -62,7 +62,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (min < -9007199254740991 || min > 9007199254740991) {
         throw new ErrorFactory({
-            error: "minSafeInteger",
+            name: "minSafeInteger",
             message: "must be safe integer ",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -71,7 +71,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (max < -9007199254740991 || max > 9007199254740991) {
         throw new ErrorFactory({
-            error: "maxSafeInteger",
+            name: "maxSafeInteger",
             message: "must be safe integer ",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
@@ -82,7 +82,7 @@ export async function secureRandomNumber(args: ISecureRandomNumber): Promise<num
     
     if (range < -9007199254740991 || range > 9007199254740991) {
         throw new ErrorFactory({
-            error: "rangeSafeInteger",
+            name: "rangeSafeInteger",
             message: "must be safe integer ",
             detail: "",
             path: `random digits, secure random module, env: ${detect()}`
