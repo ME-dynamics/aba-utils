@@ -2,8 +2,8 @@ import { StatusCodes } from "http-status-codes";
 
 export interface IHttpResult<T> {
   code: StatusCodes;
-  payload?: T;
-  error?: string;
+  payload: T | undefined;
+  error: string | undefined;
 }
 
 export interface IUrl {
