@@ -28,11 +28,10 @@ export function buildErrorFactory() {
     }
     name: string;
     message: string;
-    detail?: string;
-    errorId?: string;
-    nativeError?: Error;
-    path?: string;
-    timestamp?: number;
+    detail: string | undefined;
+    nativeError: Error | undefined;
+    path: string | undefined;
+    timestamp: number | undefined;
   }
   
 }
