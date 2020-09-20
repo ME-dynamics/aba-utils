@@ -15,6 +15,8 @@ export async function secureRandomNumber(
       message: "you should define min value",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -24,6 +26,8 @@ export async function secureRandomNumber(
       message: "you should define max value",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -33,6 +37,8 @@ export async function secureRandomNumber(
       message: "you should define min as an integer",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -42,6 +48,8 @@ export async function secureRandomNumber(
       message: "you should define max as an integer",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -51,6 +59,8 @@ export async function secureRandomNumber(
       message: "max must be greater than min",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -68,6 +78,8 @@ export async function secureRandomNumber(
       message: "must be safe integer ",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -77,6 +89,8 @@ export async function secureRandomNumber(
       message: "must be safe integer ",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
@@ -88,6 +102,8 @@ export async function secureRandomNumber(
       message: "must be safe integer ",
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
+      nativeError: undefined,
+      timestamp: undefined,
     });
   }
 
