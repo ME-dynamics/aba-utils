@@ -8,7 +8,8 @@ function redirection(args: IUrl, code: number): IHttpResult<IUrl> {
         code,
         payload: {
             url
-        }
+        },
+        error: undefined
     }
 }
 
