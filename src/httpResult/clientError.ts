@@ -6,6 +6,7 @@ function clientError<T>(args: IResult<T>, code: number): IHttpResult<T> {
   if(!error) throw new Error("error must be defined")
   return {
     code,
+    payload: undefined,
     error
   };
 }
