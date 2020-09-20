@@ -2,9 +2,9 @@
 export interface IError {
     name: string;
     message: string;
-    detail?: string;
-    path?: string;
-    nativeError? : Error;
-    timestamp?: number;
+    detail: string | undefined;
+    path: string | undefined;
+    nativeError : Error | undefined;
+    timestamp: number | undefined;
 }
 
