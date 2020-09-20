@@ -1,5 +1,5 @@
 export interface IResult<T> {
   success: boolean;
-  payload?: T;
-  error?: string;
+  payload: T | undefined;
+  error: string | undefined;
 }
