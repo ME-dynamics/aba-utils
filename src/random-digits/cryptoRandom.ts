@@ -10,7 +10,9 @@ export function cryptoRandom(value: number): Promise<Buffer> {
                 name: "cryptoRandomNotFound",
                 message: "No suitable random number generator available.",
                 detail: "Ensure that your runtime is linked against OpenSSL (or an equivalent) correctly.",
-                path: `random digits module, secure random function, env: ${detect()}`
+                path: `random digits module, secure random function, env: ${detect()}`,
+                nativeError: undefined,
+                timestamp: undefined
             })
         }
         randomBytes(value, (err, buffer)=> {
