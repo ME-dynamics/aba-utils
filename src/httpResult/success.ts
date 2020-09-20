@@ -7,6 +7,7 @@ function success<T>(args: IResult<T>, code: number): IHttpResult<T> {
   return {
     code,
     payload,
+    error: undefined
   };
 }
 
