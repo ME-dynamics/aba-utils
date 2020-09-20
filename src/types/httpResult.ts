@@ -6,6 +6,11 @@ export interface IHttpResult<T> {
   error: string | undefined;
 }
 
+export interface IHttp<T> {
+  payload: T | undefined;
+  error: string | undefined;
+}
+
 export interface IUrl {
   url: string;
 }
