@@ -7,3 +7,11 @@ export { TDetectPlatform, TDetectX, TReactNativeEngine } from "./detectEnv";
 export { ISecureRandomNumber } from "./randomDigits";
 
 export { IResult } from "./result";
+
+export {
+  ICreateType,
+  ICreateTable,
+  IPrimaryKey,
+  IDbColumn,
+  TScyllaNativeTypes,
+} from "./db";
