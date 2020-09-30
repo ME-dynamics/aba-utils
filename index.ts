@@ -12,4 +12,13 @@ export {
   TDetectPlatform,
   TDetectX,
   TReactNativeEngine,
+  IHttp,
+  IHttpResult,
+  IUrl,
+  THttpVerbs,
+  ICreateTable,
+  ICreateType,
+  IDbColumn,
+  IPrimaryKey,
+  TScyllaNativeTypes,
 } from "./src/types";
