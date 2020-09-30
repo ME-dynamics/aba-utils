@@ -22,4 +22,5 @@ export {
   IDbColumn,
   IPrimaryKey,
   TScyllaNativeTypes,
+  IQuery
 } from "./src/types";
