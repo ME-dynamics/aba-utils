@@ -54,3 +54,8 @@ export interface ICreateTable {
   columns: IDbColumn[];
   primaryKey: IPrimaryKey;
 }
+
+export interface IQuery {
+  name: string;
+  query: string;
+}
