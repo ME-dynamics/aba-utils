@@ -1,11 +1,20 @@
 import { columnStringify } from "./columnStringify";
-import { ICreateType } from "../types";
+import { result } from "../result";
+import { ICreateType, IQuery } from "../types";
 
 export function createType(args: ICreateType) {
   const { name, version, columns } = args;
   const dbColumns = columnStringify(columns);
-  return `CREATE TYPE IF NOT EXISTS ${name.toLowerCase()}_${version.toLowerCase()} (
-        ${dbColumns}
-    )`;
+  const typeName = `${name.toLowerCase()}_${version.toLowerCase()}`;
+  const typeQuery = `CREATE TYPE IF NOT EXISTS ${typeName} (
+    ${dbColumns}
+)`
+  return result<IQuery>({
+    success: true,
+    payload: {
+      name: typeName,
+      query: typeQuery
+    },
+    error: undefined
+  });
 }
-
