@@ -1,6 +1,6 @@
 {
   "name": "aba-utils",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "node library: aba-utils",
   "main": "dist/index.js",
   "repository": "https://github.com/eyousefifar/aba-utils",
