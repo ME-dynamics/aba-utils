@@ -1,9 +1,8 @@
 import { columnStringify } from "./columnStringify";
 import { primaryKeyStringify } from "./primaryKeyStringify";
-import { result } from "../result";
 import { ICreateTable, IQuery } from "../types";
 
-export function createTable(args: ICreateTable) {
+export function createTable(args: ICreateTable): IQuery {
   const { name, version, columns, primaryKey } = args;
   const dbColumns = columnStringify(columns);
   const primaryKeys = primaryKeyStringify(primaryKey);
@@ -12,12 +11,8 @@ export function createTable(args: ICreateTable) {
     ${dbColumns},
     PRIMARY KEY ${primaryKeys}
 )`;
-  return result<IQuery>({
-    success: true,
-    payload: {
-      name: tableName,
-      query: tableQuery,
-    },
-    error: undefined,
-  });
+  return  {
+    name: tableName,
+    query: tableQuery,
+  }
 }
