@@ -24,17 +24,15 @@ export type TScyllaNativeTypes =
   | "MAP"
   | "UDT";
 
-
-
 export interface IDbColumn {
   name: string;
   type: TScyllaNativeTypes;
-  setType? : TScyllaNativeTypes;
-  udtName?: string
+  setType?: TScyllaNativeTypes;
+  udtName?: string;
   map?: {
     keyType: TScyllaNativeTypes;
     valueType: TScyllaNativeTypes;
-  }
+  };
 }
 
 export interface ICreateType {
@@ -58,4 +56,13 @@ export interface ICreateTable {
 export interface IQuery {
   name: string;
   query: string;
+}
+
+export interface ISelect {
+  table: string;
+  version: string;
+  distinct: boolean;
+  columns: string[],
+  where: string[];
+  orderBy: any;
 }

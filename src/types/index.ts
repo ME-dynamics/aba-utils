@@ -14,5 +14,6 @@ export {
   IPrimaryKey,
   IDbColumn,
   TScyllaNativeTypes,
-  IQuery
+  IQuery,
+  ISelect
 } from "./db";
