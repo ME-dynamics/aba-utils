@@ -63,5 +63,13 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "exclude": ["benchmarks", "__tests__", "dist", "**/*.d.ts", "node_modules"]
+  "exclude": [
+    "benchmarks",
+    "__tests__",
+    "dist",
+    "**/*.d.ts",
+    "node_modules",
+    "jest.config.js",
+    ".eslintrc.js"
+  ]
 }
