@@ -15,5 +15,10 @@ export {
   IDbColumn,
   TScyllaNativeTypes,
   IQuery,
-  ISelect
+  ISelect,
+  IEqual,
+  IGreaterThan,
+  ILessThan,
+  INotEqual,
+  IN
 } from "./db";
