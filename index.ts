@@ -5,7 +5,17 @@ export { detect } from "./src/detect-env";
 export { secureRandomNumber } from "./src/random-digits";
 export { httpResult } from "./src/httpResult";
 export { result } from "./src/result";
-export { createType, createTable } from "./src/db"
+export {
+  createType,
+  createTable,
+  IN,
+  equal,
+  greaterThan,
+  lessThan,
+  notEqual,
+  select,
+  
+} from "./src/db";
 export {
   IError,
   IResult,
@@ -22,5 +32,5 @@ export {
   IDbColumn,
   IPrimaryKey,
   TScyllaNativeTypes,
-  IQuery
+  IQuery,
 } from "./src/types";
