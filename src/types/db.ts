@@ -62,7 +62,38 @@ export interface ISelect {
   table: string;
   version: string;
   distinct: boolean;
-  columns: string[],
+  columns: string[];
   where: string[];
-  orderBy: any;
 }
+
+export interface IEqual {
+  argument: string;
+  equals: "self" | string | number | boolean;
+}
+
+export interface IGreaterThan {
+  argument: string;
+  equality: boolean;
+  greaterThan: "self" | string | number | boolean;
+}
+
+export interface ILessThan {
+  argument: string;
+  equality: boolean;
+  lessThan: "self" | string | number | boolean;
+}
+
+export interface INotEqual {
+  argument: string;
+  notEqual: "self" | string | number | boolean;
+}
+
+export interface IN {
+  argument: string;
+  items: "self" | string[];
+}
+
+// export interface IContains {
+//   argument: string;
+
+// }
