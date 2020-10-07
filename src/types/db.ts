@@ -101,6 +101,12 @@ export interface IUpdateQuery {
   values: IValues[];
   where: string[];
 }
+export interface IDeleteQuery {
+  table: string;
+  version: string;
+  columns: string[] | undefined;
+  where: string[];
+}
 export interface ISelectQuery {
   table: string;
   version: string;
