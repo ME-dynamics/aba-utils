@@ -27,7 +27,10 @@ export {
   TResultSet,
   TRow,
   IUpsert,
-  IInit
+  IInit,
+  IInsertQuery,
+  IValues,
+  IUpdateQuery,
 } from "./db";
 
 export { TReply, TRequest } from "./http";

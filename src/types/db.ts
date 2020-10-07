@@ -86,6 +86,21 @@ export interface IQuery {
   query: string;
 }
 
+export interface IValues {
+  column: string;
+  value: "self" | string | number | boolean | null;
+}
+export interface IInsertQuery {
+  table: string;
+  version: string;
+  values: IValues[];
+}
+export interface IUpdateQuery {
+  table: string;
+  version: string;
+  values: IValues[];
+  where: string[];
+}
 export interface ISelectQuery {
   table: string;
   version: string;
@@ -93,7 +108,6 @@ export interface ISelectQuery {
   columns: string[];
   where: string[];
 }
-
 export interface IEqual {
   argument: string;
   equals: "self" | string | number | boolean;
@@ -125,3 +139,9 @@ export interface IN {
 //   argument: string;
 
 // }
+
+// functions
+
+export type TDbSelectFunc = (info: ISelect) => Promise<TResultSet>;
+export type TDbUpsertFunc = (info: IUpsert) => Promise<boolean>;
+export type TDbInitFunc = (info: IInit) => Promise<boolean>;
