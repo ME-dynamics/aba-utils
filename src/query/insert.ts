@@ -1,6 +1,6 @@
-import { IInsert } from "../types";
+import { IInsertQuery } from "../types";
 import { separator } from "./constant";
-export function insert(args: IInsert) {
+export function insert(args: IInsertQuery) {
   const { table, version, values } = args;
   const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
   const columns = [];
@@ -20,6 +20,6 @@ export function insert(args: IInsert) {
   }
   return `INSERT INTO ${tableName} (${columns.join(
     separator
-  )}) VALUES (${clmnValues.join(separator)})`;
+  )}) VALUES (${clmnValues.join(separator)});`;
 }
 

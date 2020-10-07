@@ -10,7 +10,7 @@ export function createTable(args: ICreateTable): IQuery {
   const tableQuery = `CREATE TABLE IF NOT EXISTS ${tableName} (
     ${dbColumns},
     PRIMARY KEY ${primaryKeys}
-)`;
+);`;
   return  {
     name: tableName,
     query: tableQuery,

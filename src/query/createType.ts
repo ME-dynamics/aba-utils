@@ -7,7 +7,7 @@ export function createType(args: ICreateType): IQuery {
   const typeName = `${name.toLowerCase()}_${version.toLowerCase()}`;
   const typeQuery = `CREATE TYPE IF NOT EXISTS ${typeName} (
     ${dbColumns}
-)`;
+);`;
   return {
     name: typeName,
     query: typeQuery,
