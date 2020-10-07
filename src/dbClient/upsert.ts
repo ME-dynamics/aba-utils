@@ -1,13 +1,13 @@
 import { ErrorFactory } from "../..";
-import { IBuildClient, IUpsert } from "../types";
+import { IBuildClient, IUpsert, TResultSet } from "../types";
 
 export function buildUpsert(args: IBuildClient) {
   const { client } = args;
-  return async function upsert(info: IUpsert) {
+  return async function upsert(info: IUpsert): Promise<TResultSet> {
     const { query, params, errorPath } = info;
     try {
       const result = await client.execute(query, params, { prepare: true });
-      return result ? true : false;
+      return result;
     } catch (error) {
       throw new ErrorFactory({
         name: "queryUpsertFailed",
