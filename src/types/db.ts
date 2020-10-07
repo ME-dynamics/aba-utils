@@ -149,5 +149,5 @@ export interface IN {
 // functions
 
 export type TDbSelectFunc = (info: ISelect) => Promise<TResultSet>;
-export type TDbUpsertFunc = (info: IUpsert) => Promise<boolean>;
-export type TDbInitFunc = (info: IInit) => Promise<boolean>;
+export type TDbUpsertFunc = (info: IUpsert) => Promise<TResultSet>;
+export type TDbInitFunc = (info: IInit) => Promise<TResultSet>;
