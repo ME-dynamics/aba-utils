@@ -6,6 +6,7 @@ export function insert(args: IInsertQuery) {
   const columns = [];
   const clmnValues = [];
   for (let index = 0; index < values.length; index++) {
+    // eslint-disable-next-line security/detect-object-injection
     const { column, value } = values[index];
     columns.push(column);
     if (value === "self") {
