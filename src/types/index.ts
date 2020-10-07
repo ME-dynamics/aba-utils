@@ -20,5 +20,13 @@ export {
   IGreaterThan,
   ILessThan,
   INotEqual,
-  IN
+  IN,
+  IBuildClient,
+  TLong,
+  TResultSet,
+  TRow,
+  IUpsert,
+  IInit
 } from "./db";
+
+export { TReply, TRequest } from "./http";
