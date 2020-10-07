@@ -10,14 +10,14 @@ export interface IBuildClient {
 
 export interface ISelect {
   query: string;
-  params: Record<string, string> | undefined;
+  params: Record<string, any> | undefined;
   unique: true;
   errorPath: string | undefined;
 }
 
 export interface IUpsert {
   query: string;
-  params: Record<string, string> | undefined;
+  params: Record<string, any> | undefined;
   errorPath: string | undefined;
 }
 
