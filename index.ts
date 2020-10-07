@@ -6,7 +6,12 @@ export { secureRandomNumber } from "./src/random-digits";
 export { httpResult } from "./src/httpResult";
 export { result } from "./src/result";
 
-export { buildInit, buildSelect, buildUpsert } from "./src/dbClient";
+export {
+  buildInit,
+  buildSelect,
+  buildUpsert,
+  buildDelete,
+} from "./src/dbClient";
 
 export {
   createType,
@@ -17,5 +22,8 @@ export {
   lessThan,
   notEqual,
   select,
+  deleteQuery,
+  insert,
+  update,
 } from "./src/query";
 export * as types from "./src/types";
