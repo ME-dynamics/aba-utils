@@ -1,4 +1,4 @@
-import { separator } from "./constant";
+import { separator, andStr } from "./constant";
 import { ISelectQuery } from "../types";
 
 export function select(args: ISelectQuery) {
@@ -7,7 +7,6 @@ export function select(args: ISelectQuery) {
   const clause = columns.join(separator);
   const isDistinct = distinct ? "DISTINCT " : "";
   return `SELECT ${isDistinct}${clause} FROM ${tableName} WHERE ${where.join(
-    " AND "
+    andStr
   )};`;
 }
-
