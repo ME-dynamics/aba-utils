@@ -31,6 +31,10 @@ export {
   IInsertQuery,
   IValues,
   IUpdateQuery,
+  IDeleteQuery,
+  TDbInitFunc,
+  TDbSelectFunc,
+  TDbUpsertFunc,
 } from "./db";
 
 export { TReply, TRequest } from "./http";
