@@ -1,6 +1,5 @@
-import { separator } from "./constant";
+import { separator, andStr } from "./constant";
 import { IUpdateQuery } from "../types";
-
 
 export function update(args: IUpdateQuery) {
   const { table, version, values, where } = args;
@@ -22,7 +21,5 @@ export function update(args: IUpdateQuery) {
   }
   return `UPDATE ${tableName} SET ${updateInfo.join(
     separator
-  )} WHERE ${where.join(" AND ")};`;
+  )} WHERE ${where.join(andStr)};`;
 }
-
-
