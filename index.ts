@@ -1,3 +1,5 @@
+import * as allTypes from "./src/types";
+export const types = allTypes;
 import { buildErrorFactory } from "./src/errorFactory";
 
 export const ErrorFactory = buildErrorFactory();
@@ -26,4 +28,3 @@ export {
   insert,
   update,
 } from "./src/query";
-export * as types from "./src/types";
