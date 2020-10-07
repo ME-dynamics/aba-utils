@@ -1,3 +1,31 @@
+import { Client, types } from "cassandra-driver";
+
+export type TResultSet = types.ResultSet;
+export type TRow = types.Row;
+export type TLong = types.Long;
+
+export interface IBuildClient {
+  client: Client;
+}
+
+export interface ISelect {
+  query: string;
+  params: Record<string, string> | undefined;
+  unique: true;
+  errorPath: string | undefined;
+}
+
+export interface IUpsert {
+  query: string;
+  params: Record<string, string> | undefined;
+  errorPath: string | undefined;
+}
+
+export interface IInit {
+  query: string;
+  errorPath: string | undefined;
+}
+
 export type TScyllaNativeTypes =
   | "ASCII"
   | "BIGINT"
