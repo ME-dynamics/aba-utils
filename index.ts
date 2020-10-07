@@ -5,6 +5,9 @@ export { detect } from "./src/detect-env";
 export { secureRandomNumber } from "./src/random-digits";
 export { httpResult } from "./src/httpResult";
 export { result } from "./src/result";
+
+export { buildInit, buildSelect, buildUpsert } from "./src/dbClient";
+
 export {
   createType,
   createTable,
@@ -14,23 +17,5 @@ export {
   lessThan,
   notEqual,
   select,
-  
-} from "./src/db";
-export {
-  IError,
-  IResult,
-  ISecureRandomNumber,
-  TDetectPlatform,
-  TDetectX,
-  TReactNativeEngine,
-  IHttp,
-  IHttpResult,
-  IUrl,
-  THttpVerbs,
-  ICreateTable,
-  ICreateType,
-  IDbColumn,
-  IPrimaryKey,
-  TScyllaNativeTypes,
-  IQuery,
-} from "./src/types";
+} from "./src/query";
+export * as types from "./src/types";
