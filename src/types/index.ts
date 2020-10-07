@@ -16,6 +16,7 @@ export {
   TScyllaNativeTypes,
   IQuery,
   ISelect,
+  ISelectQuery,
   IEqual,
   IGreaterThan,
   ILessThan,

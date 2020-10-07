@@ -86,7 +86,7 @@ export interface IQuery {
   query: string;
 }
 
-export interface ISelect {
+export interface ISelectQuery {
   table: string;
   version: string;
   distinct: boolean;
