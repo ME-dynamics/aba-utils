@@ -16,7 +16,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -27,7 +26,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -38,7 +36,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -49,7 +46,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -60,7 +56,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -79,7 +74,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -90,7 +84,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
@@ -103,7 +96,6 @@ export async function secureRandomNumber(
       detail: "",
       path: `random digits, secure random module, env: ${detect()}`,
       nativeError: undefined,
-      timestamp: undefined,
     });
   }
 
