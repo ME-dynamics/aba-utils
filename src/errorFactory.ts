@@ -1,37 +1,27 @@
-
 import { detect } from "./detect-env";
-import {IError } from "./types";
+import { IError } from "./types";
 
 export function buildErrorFactory() {
   const isNode = detect() === "node";
-  return class ErrorFactory extends Error{
+  return class ErrorFactory extends Error {
     constructor(args: IError) {
-      const {
-        name,
-        message,
-        detail,
-        nativeError,
-        path,
-        timestamp = Date.now(),
-      } = args;
+      const { name, message, detail, nativeError, path } = args;
       super(message);
       this.name = name;
       this.message = message;
       this.detail = detail;
       this.nativeError = nativeError;
       this.path = path;
-      this.timestamp = timestamp;
-      if(isNode) {
+      this.timestamp = Date.now();
+      if (isNode) {
         Error.captureStackTrace(this);
       }
-      
     }
     name: string;
     message: string;
     detail: string | undefined;
     nativeError: Error | undefined;
     path: string | undefined;
-    timestamp: number | undefined;
-  }
-  
+    timestamp: number;
+  };
 }
