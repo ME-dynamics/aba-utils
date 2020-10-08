@@ -10,13 +10,13 @@ export function update(args: IUpdateQuery) {
     const { column, value } = values[index];
 
     if (value === "self") {
-      updateInfo.push(`${column} = :${column}`);
+      updateInfo.push(`${column.toLowerCase()} = :${column.toLowerCase()}`);
     } else if (typeof value === "string") {
-      updateInfo.push(`${column} = '${value}'`);
+      updateInfo.push(`${column.toLowerCase()} = '${value}'`);
     } else if (value === null) {
-      updateInfo.push(`${column} = null`);
+      updateInfo.push(`${column.toLowerCase()} = null`);
     } else {
-      updateInfo.push(`${column} = ${value}`);
+      updateInfo.push(`${column.toLowerCase()} = ${value}`);
     }
   }
   return `UPDATE ${tableName} SET ${updateInfo.join(

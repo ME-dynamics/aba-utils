@@ -8,9 +8,9 @@ export function insert(args: IInsertQuery) {
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
     const { column, value } = values[index];
-    columns.push(column);
+    columns.push(column.toLowerCase());
     if (value === "self") {
-      clmnValues.push(`:${column}`);
+      clmnValues.push(`:${column.toLowerCase()}`);
     } else if (typeof value === "string") {
       clmnValues.push(`'${value}'`);
     } else if (value === null) {

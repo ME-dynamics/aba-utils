@@ -11,45 +11,45 @@ import { separator } from "./constant";
 export function equal(args: IEqual) {
   const { argument, equals } = args;
   if (equals === "self") {
-    return `${argument} = :${argument}`;
+    return `${argument.toLowerCase()} = :${argument.toLowerCase()}`;
   } else {
-    return `${argument} = ${equals}`;
+    return `${argument.toLowerCase()} = ${equals}`;
   }
 }
 
 export function greaterThan(args: IGreaterThan) {
   const { argument, greaterThan, equality } = args;
   if (greaterThan === "self") {
-    return `${argument} >${equality ? "=" : ""} :${argument}`;
+    return `${argument.toLowerCase()} >${equality ? "=" : ""} :${argument.toLowerCase()}`;
   } else {
-    return `${argument} >${equality ? "=" : ""} ${greaterThan}`;
+    return `${argument.toLowerCase()} >${equality ? "=" : ""} ${greaterThan}`;
   }
 }
 
 export function lessThan(args: ILessThan) {
   const { argument, lessThan, equality } = args;
   if (lessThan === "self") {
-    return `${argument} <${equality ? "=" : ""} :${argument}`;
+    return `${argument.toLowerCase()} <${equality ? "=" : ""} :${argument.toLowerCase()}`;
   } else {
-    return `${argument} <${equality ? "=" : ""} ${lessThan}`;
+    return `${argument.toLowerCase()} <${equality ? "=" : ""} ${lessThan}`;
   }
 }
 
 export function notEqual(args: INotEqual) {
   const { argument, notEqual } = args;
   if (notEqual === "self") {
-    return `${argument} = :${argument}`;
+    return `${argument.toLowerCase()} = :${argument.toLowerCase()}`;
   } else {
-    return `${argument} = ${notEqual}`;
+    return `${argument.toLowerCase()} = ${notEqual}`;
   }
 }
 
 export function IN(args: IN) {
   const { argument, items } = args;
   if (items === "self") {
-    return `${argument} IN :${argument}`;
+    return `${argument.toLowerCase()} IN :${argument.toLowerCase()}`;
   } else {
-    return `${argument} IN (${items.join(separator)})`;
+    return `${argument.toLowerCase()} IN (${items.join(separator)})`;
   }
 }
 
