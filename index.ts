@@ -1,5 +1,5 @@
-import * as allTypes from "./src/types";
-export const types = allTypes;
+import * as types from "./src/types";
+export * as types from "./src/types";
 import { buildErrorFactory } from "./src/errorFactory";
 
 export const ErrorFactory = buildErrorFactory();
