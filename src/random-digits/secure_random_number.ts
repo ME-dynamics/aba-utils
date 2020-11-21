@@ -1,6 +1,6 @@
 import { crypto_random } from "./crypto_random";
 import { error_factory } from "../../index";
-import { detect } from "../detect-env";
+import { detect_env } from "../detect-env";
 import { calculate_parameters } from "./calculate_parameters";
 import { i_secure_random_number } from "../types";
 
@@ -14,7 +14,7 @@ export async function secure_random_number(
       name: "min_not_defined",
       message: "you should define min value",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -24,7 +24,7 @@ export async function secure_random_number(
       name: "max_not_defined",
       message: "you should define max value",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -34,7 +34,7 @@ export async function secure_random_number(
       name: "min_not_integer",
       message: "you should define min as an integer",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -44,7 +44,7 @@ export async function secure_random_number(
       name: "max_not_integer",
       message: "you should define max as an integer",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -54,7 +54,7 @@ export async function secure_random_number(
       name: "max_lower_than_min",
       message: "max must be greater than min",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -72,7 +72,7 @@ export async function secure_random_number(
       name: "min_safe_integer",
       message: "must be safe integer ",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -82,7 +82,7 @@ export async function secure_random_number(
       name: "max_safe_integer",
       message: "must be safe integer ",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }
@@ -94,7 +94,7 @@ export async function secure_random_number(
       name: "range_safe_integer",
       message: "must be safe integer ",
       detail: "",
-      path: `random digits, secure random module, env: ${detect()}`,
+      path: `random digits, secure random module, env: ${detect_env()}`,
       native_error: undefined,
     });
   }

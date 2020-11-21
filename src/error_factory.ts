@@ -1,8 +1,8 @@
-import { detect } from "./detect-env";
+import { detect_env } from "./detect-env";
 import { i_error } from "./types";
 
 export function build_error_factory() {
-  const is_node = detect() === "node";
+  const is_node = detect_env() === "node";
   return class error_factory extends Error {
     constructor(args: i_error) {
       const { name, message, detail, native_error, path } = args;

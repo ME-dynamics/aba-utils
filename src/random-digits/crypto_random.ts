@@ -1,6 +1,6 @@
 import { randomBytes } from "crypto";
 import { error_factory } from "../../index";
-import { detect } from "../detect-env";
+import { detect_env } from "../detect-env";
 
 export function crypto_random(value: number): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -10,7 +10,7 @@ export function crypto_random(value: number): Promise<Buffer> {
         message: "No suitable random number generator available.",
         detail:
           "Ensure that your runtime is linked against OpenSSL (or an equivalent) correctly.",
-        path: `random digits module, secure random function, env: ${detect()}`,
+        path: `random digits module, secure random function, env: ${detect_env()}`,
         native_error: undefined,
       });
     }
