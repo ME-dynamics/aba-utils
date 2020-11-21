@@ -1,5 +1,10 @@
+import { Client, types } from "cassandra-driver";
 
-export interface i_build_client<Client> {
+export type t_result_set = types.ResultSet;
+export type t_row = types.Row;
+export type t_long = types.Long;
+
+export interface i_build_client {
   client: Client;
 }
 
@@ -143,6 +148,6 @@ export interface IN {
 
 // functions
 
-export type t_db_select_func<result_set> = (info: i_select) => Promise<result_set>;
-export type t_db_upsert_func<result_set> = (info: i_upsert) => Promise<result_set>;
-export type t_db_init_func<result_set> = (info: i_init) => Promise<result_set>;
+export type t_db_select_func = (info: i_select) => Promise<t_result_set>;
+export type t_db_upsert_func = (info: i_upsert) => Promise<t_result_set>;
+export type t_db_init_func = (info: i_init) => Promise<t_result_set>;
