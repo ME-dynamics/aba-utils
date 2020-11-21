@@ -1,6 +1,5 @@
-import { FastifyRequest, FastifyReply } from "./fastify";
 
-export type t_request = FastifyRequest;
+export type t_request<Request> = Request;
 // http interfaces start
-export type t_reply = FastifyReply;
+export type t_reply<Reply> = Reply;
 // http interfaces end
