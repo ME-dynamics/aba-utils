@@ -1,6 +1,6 @@
-import { IResult } from "./types"
+import { i_result } from "./types"
 
-export function result<T>(args: IResult<T>): IResult<T> {
+export function result<T>(args: i_result<T>): i_result<T> {
     return {
         success: args.success,
         payload: args.payload,

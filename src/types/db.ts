@@ -1,32 +1,32 @@
 import { Client, types } from "cassandra-driver";
 
-export type TResultSet = types.ResultSet;
-export type TRow = types.Row;
-export type TLong = types.Long;
+export type t_result_set = types.ResultSet;
+export type t_row = types.Row;
+export type t_long = types.Long;
 
-export interface IBuildClient {
+export interface i_build_client {
   client: Client;
 }
 
-export interface ISelect {
+export interface i_select {
   query: string;
   params: Record<string, any> | undefined;
   unique: true;
-  errorPath: string | undefined;
+  error_path: string | undefined;
 }
 
-export interface IUpsert {
+export interface i_upsert {
   query: string;
   params: Record<string, any> | undefined;
-  errorPath: string | undefined;
+  error_path: string | undefined;
 }
 
-export interface IInit {
+export interface i_init {
   query: string;
-  errorPath: string | undefined;
+  error_path: string | undefined;
 }
 
-export type TScyllaNativeTypes =
+export type t_scylla_native_types =
   | "ASCII"
   | "BIGINT"
   | "BLOB"
@@ -52,88 +52,88 @@ export type TScyllaNativeTypes =
   | "MAP"
   | "UDT";
 
-export interface IDbColumn {
+export interface i_db_column {
   name: string;
-  type: TScyllaNativeTypes;
-  setType?: TScyllaNativeTypes;
-  udtName?: string;
+  type: t_scylla_native_types;
+  set_type?: t_scylla_native_types;
+  udt_name?: string;
   map?: {
-    keyType: TScyllaNativeTypes;
-    valueType: TScyllaNativeTypes;
+    key_type: t_scylla_native_types;
+    value_type: t_scylla_native_types;
   };
 }
 
-export interface ICreateType {
+export interface i_create_type {
   name: string;
   version: string;
-  columns: IDbColumn[];
+  columns: i_db_column[];
 }
 
-export interface IPrimaryKey {
+export interface i_primary_key {
   partition: string[];
   cluster: string[];
 }
 
-export interface ICreateTable {
+export interface i_create_table {
   name: string;
   version: string;
-  columns: IDbColumn[];
-  primaryKey: IPrimaryKey;
+  columns: i_db_column[];
+  primary_key: i_primary_key;
 }
 
-export interface IQuery {
+export interface i_query {
   name: string;
   query: string;
 }
 
-export interface IValues {
+export interface i_values {
   column: string;
   value: "self" | string | number | boolean | null;
 }
-export interface IInsertQuery {
+export interface i_insert_query {
   table: string;
   version: string;
-  values: IValues[];
+  values: i_values[];
 }
-export interface IUpdateQuery {
+export interface i_update_query {
   table: string;
   version: string;
-  values: IValues[];
+  values: i_values[];
   where: string[];
 }
-export interface IDeleteQuery {
+export interface i_delete_query {
   table: string;
   version: string;
   columns: string[] | undefined;
   where: string[];
 }
-export interface ISelectQuery {
+export interface i_select_query {
   table: string;
   version: string;
   distinct: boolean;
   columns: string[];
   where: string[];
 }
-export interface IEqual {
+export interface i_equal {
   argument: string;
   equals: "self" | string | number | boolean;
 }
 
-export interface IGreaterThan {
+export interface i_greater_than {
   argument: string;
   equality: boolean;
-  greaterThan: "self" | string | number | boolean;
+  greater_than: "self" | string | number | boolean;
 }
 
-export interface ILessThan {
+export interface i_less_than {
   argument: string;
   equality: boolean;
-  lessThan: "self" | string | number | boolean;
+  less_than: "self" | string | number | boolean;
 }
 
-export interface INotEqual {
+export interface i_not_equal {
   argument: string;
-  notEqual: "self" | string | number | boolean;
+  not_equal: "self" | string | number | boolean;
 }
 
 export interface IN {
@@ -148,6 +148,6 @@ export interface IN {
 
 // functions
 
-export type TDbSelectFunc = (info: ISelect) => Promise<TResultSet>;
-export type TDbUpsertFunc = (info: IUpsert) => Promise<TResultSet>;
-export type TDbInitFunc = (info: IInit) => Promise<TResultSet>;
+export type t_db_select_func = (info: i_select) => Promise<t_result_set>;
+export type t_db_upsert_func = (info: i_upsert) => Promise<t_result_set>;
+export type t_db_init_func = (info: i_init) => Promise<t_result_set>;

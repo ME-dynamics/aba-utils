@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
-import { IHttpResult, IUrl } from "../types";
+import { i_http_result, i_url } from "../types";
 
-function redirection(args: IUrl, code: number): IHttpResult<IUrl> {
+function redirection(args: i_url, code: number): i_http_result<i_url> {
     const  { url } = args;
     if(!url) throw new Error("url must be defined")
     return {
@@ -13,34 +13,34 @@ function redirection(args: IUrl, code: number): IHttpResult<IUrl> {
     }
 }
 
-export function multipleChoices(args: IUrl): IHttpResult<IUrl> {
+export function multiple_choices(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.MULTIPLE_CHOICES)
 }
 
-export function movedPermanently(args: IUrl): IHttpResult<IUrl> {
+export function moved_permanently(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.MOVED_PERMANENTLY)
 }
 
-export function movedTemporarily(args: IUrl): IHttpResult<IUrl> {
+export function moved_temporarily(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.MOVED_TEMPORARILY)
 }
 
-export function seeOther(args: IUrl): IHttpResult<IUrl> {
+export function see_other(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.SEE_OTHER)
 }
 
-export function notModified(args: IUrl): IHttpResult<IUrl> {
+export function not_modified(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.NOT_MODIFIED)
 }
 
-export function useProxy(args: IUrl): IHttpResult<IUrl> {
+export function use_proxy(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.USE_PROXY)
 }
 
-export function temporaryRedirect(args: IUrl): IHttpResult<IUrl> {
+export function temporary_redirect(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.TEMPORARY_REDIRECT)
 }
 
-export function permanentRedirect(args: IUrl): IHttpResult<IUrl> {
+export function permanent_redirect(args: i_url): i_http_result<i_url> {
     return redirection(args, StatusCodes.PERMANENT_REDIRECT)
 }

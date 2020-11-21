@@ -1,26 +1,26 @@
-import { IInsertQuery } from "../types";
+import { i_insert_query } from "../types";
 import { separator } from "./constant";
-export function insert(args: IInsertQuery) {
+export function insert_query(args: i_insert_query) {
   const { table, version, values } = args;
-  const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
+  const table_name = `${table.toLowerCase()}_${version.toLowerCase()}`;
   const columns = [];
-  const clmnValues = [];
+  const clmn_values = [];
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
     const { column, value } = values[index];
     columns.push(column.toLowerCase());
     if (value === "self") {
-      clmnValues.push(`:${column.toLowerCase()}`);
+      clmn_values.push(`:${column.toLowerCase()}`);
     } else if (typeof value === "string") {
-      clmnValues.push(`'${value}'`);
+      clmn_values.push(`'${value}'`);
     } else if (value === null) {
-      clmnValues.push("null");
+      clmn_values.push("null");
     } else {
-      clmnValues.push(value);
+      clmn_values.push(value);
     }
   }
-  return `INSERT INTO ${tableName} (${columns.join(
+  return `INSERT INTO ${table_name} (${columns.join(
     separator
-  )}) VALUES (${clmnValues.join(separator)});`;
+  )}) VALUES (${clmn_values.join(separator)});`;
 }
 

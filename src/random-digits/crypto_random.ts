@@ -1,17 +1,17 @@
 import { randomBytes } from "crypto";
-import { ErrorFactory } from "../../";
+import { error_factory } from "../../index";
 import { detect } from "../detect-env";
 
-export function cryptoRandom(value: number): Promise<Buffer> {
+export function crypto_random(value: number): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     if (!randomBytes || randomBytes === null) {
-      throw new ErrorFactory({
-        name: "cryptoRandomNotFound",
+      throw new error_factory({
+        name: "crypto_random_not_found",
         message: "No suitable random number generator available.",
         detail:
           "Ensure that your runtime is linked against OpenSSL (or an equivalent) correctly.",
         path: `random digits module, secure random function, env: ${detect()}`,
-        nativeError: undefined,
+        native_error: undefined,
       });
     }
     randomBytes(value, (err, buffer) => {

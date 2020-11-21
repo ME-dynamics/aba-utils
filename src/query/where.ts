@@ -1,4 +1,4 @@
-import { IEqual, INotEqual, IGreaterThan, ILessThan, IN } from "../types";
+import { i_equal, i_not_equal, i_greater_than, i_less_than, IN } from "../types";
 import { separator } from "./constant";
 /**
  * will generate a equal statement
@@ -8,7 +8,7 @@ import { separator } from "./constant";
  * this given value is hard coded to values
  * @param args
  */
-export function equal(args: IEqual) {
+export function equal(args: i_equal) {
   const { argument, equals } = args;
   if (equals === "self") {
     return `${argument.toLowerCase()} = :${argument.toLowerCase()}`;
@@ -17,30 +17,30 @@ export function equal(args: IEqual) {
   }
 }
 
-export function greaterThan(args: IGreaterThan) {
-  const { argument, greaterThan, equality } = args;
-  if (greaterThan === "self") {
+export function greater_than(args: i_greater_than) {
+  const { argument, greater_than, equality } = args;
+  if (greater_than === "self") {
     return `${argument.toLowerCase()} >${equality ? "=" : ""} :${argument.toLowerCase()}`;
   } else {
-    return `${argument.toLowerCase()} >${equality ? "=" : ""} ${greaterThan}`;
+    return `${argument.toLowerCase()} >${equality ? "=" : ""} ${greater_than}`;
   }
 }
 
-export function lessThan(args: ILessThan) {
-  const { argument, lessThan, equality } = args;
-  if (lessThan === "self") {
+export function less_than(args: i_less_than) {
+  const { argument, less_than, equality } = args;
+  if (less_than === "self") {
     return `${argument.toLowerCase()} <${equality ? "=" : ""} :${argument.toLowerCase()}`;
   } else {
-    return `${argument.toLowerCase()} <${equality ? "=" : ""} ${lessThan}`;
+    return `${argument.toLowerCase()} <${equality ? "=" : ""} ${less_than}`;
   }
 }
 
-export function notEqual(args: INotEqual) {
-  const { argument, notEqual } = args;
-  if (notEqual === "self") {
+export function not_equal(args: i_not_equal) {
+  const { argument, not_equal } = args;
+  if (not_equal === "self") {
     return `${argument.toLowerCase()} = :${argument.toLowerCase()}`;
   } else {
-    return `${argument.toLowerCase()} = ${notEqual}`;
+    return `${argument.toLowerCase()} = ${not_equal}`;
   }
 }
 

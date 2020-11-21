@@ -1,40 +1,44 @@
-export { IError } from "./errorFactory";
+export { i_error } from "./error_factory";
 
-export { IHttpResult, THttpVerbs, IUrl, IHttp } from "./httpResult";
-
-export { TDetectPlatform, TDetectX, TReactNativeEngine } from "./detectEnv";
-
-export { ISecureRandomNumber } from "./randomDigits";
-
-export { IResult } from "./result";
+export { i_http, i_http_result, i_url, t_http_verbs } from "./http_result";
 
 export {
-  ICreateType,
-  ICreateTable,
-  IPrimaryKey,
-  IDbColumn,
-  TScyllaNativeTypes,
-  IQuery,
-  ISelect,
-  ISelectQuery,
-  IEqual,
-  IGreaterThan,
-  ILessThan,
-  INotEqual,
+  t_detect_platform,
+  t_detect_x,
+  t_react_native_engine,
+} from "./detect_env";
+
+export { i_secure_random_number } from "./random_digits";
+
+export { i_result } from "./result";
+
+export {
   IN,
-  IBuildClient,
-  TLong,
-  TResultSet,
-  TRow,
-  IUpsert,
-  IInit,
-  IInsertQuery,
-  IValues,
-  IUpdateQuery,
-  IDeleteQuery,
-  TDbInitFunc,
-  TDbSelectFunc,
-  TDbUpsertFunc,
+  i_build_client,
+  i_create_table,
+  i_create_type,
+  i_db_column,
+  i_delete_query,
+  i_equal,
+  i_greater_than,
+  i_init,
+  i_insert_query,
+  i_less_than,
+  i_not_equal,
+  i_primary_key,
+  i_query,
+  i_select,
+  i_select_query,
+  i_update_query,
+  i_upsert,
+  i_values,
+  t_db_init_func,
+  t_db_select_func,
+  t_db_upsert_func,
+  t_long,
+  t_result_set,
+  t_row,
+  t_scylla_native_types,
 } from "./db";
 
-export { TReply, TRequest } from "./http";
+export { t_reply, t_request } from "./http";

@@ -1,4 +1,4 @@
-import { IPrimaryKey } from "../types";
+import { i_primary_key } from "../types";
 
 
 
@@ -8,7 +8,7 @@ import { IPrimaryKey } from "../types";
  * scylla db cql format
  * @param keys 
  */
-export function primaryKeyStringify(keys: IPrimaryKey) {
+export function primary_key_stringify(keys: i_primary_key) {
   const { partition, cluster } = keys;
   /**
    * check if keys contain ',' character, it's not allowed 
@@ -22,17 +22,17 @@ export function primaryKeyStringify(keys: IPrimaryKey) {
   ) {
     throw new Error("not allowed to use ',' in your keys");
   }
-  let partitionKey: string;
+  let partition_key: string;
   if (partition.length === 0) {
     throw new Error("you must define at least one partition key");
   } else if (partition.length === 1) {
-    partitionKey = `${partition[0]}`;
+    partition_key = `${partition[0]}`;
   } else {
-    partitionKey = `(${partition.join(", ")})`;
+    partition_key = `(${partition.join(", ")})`;
   }
   if (cluster.length === 0) {
-    return `(${partitionKey})`;
+    return `(${partition_key})`;
   } else {
-    return `(${partitionKey}, ${cluster.join(", ")})`;
+    return `(${partition_key}, ${cluster.join(", ")})`;
   }
 }

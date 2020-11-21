@@ -1,12 +1,12 @@
-import { separator, andStr } from "./constant";
-import { ISelectQuery } from "../types";
+import { separator, and_str } from "./constant";
+import { i_select_query } from "../types";
 
-export function select(args: ISelectQuery) {
+export function select_query(args: i_select_query) {
   const { table, version, columns, distinct, where } = args;
-  const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
+  const table_name = `${table.toLowerCase()}_${version.toLowerCase()}`;
   const clause = columns.join(separator).toLowerCase();
-  const isDistinct = distinct ? "DISTINCT " : "";
-  return `SELECT ${isDistinct}${clause} FROM ${tableName} WHERE ${where.join(
-    andStr
+  const is_distinct = distinct ? "DISTINCT " : "";
+  return `SELECT ${is_distinct}${clause} FROM ${table_name} WHERE ${where.join(
+    and_str
   )};`;
 }

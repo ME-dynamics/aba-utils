@@ -1,11 +1,11 @@
-import { IDeleteQuery } from "../types";
-import { separator, andStr } from "./constant";
+import { i_delete_query } from "../types";
+import { separator, and_str } from "./constant";
 
-export function deleteQuery(args: IDeleteQuery) {
+export function delete_query(args: i_delete_query) {
   const { table, version, columns, where } = args;
-  const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
-  const deleteColumns = columns ? ` ${columns.join(separator)}` : "";
-  return `DELETE${deleteColumns.toLowerCase()} FROM ${tableName} WHERE ${where.join(
-    andStr
+  const table_name = `${table.toLowerCase()}_${version.toLowerCase()}`;
+  const delete_columns = columns ? ` ${columns.join(separator)}` : "";
+  return `DELETE${delete_columns.toLowerCase()} FROM ${table_name} WHERE ${where.join(
+    and_str
   )};`;
 }

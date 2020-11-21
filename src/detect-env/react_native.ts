@@ -1,6 +1,6 @@
-import { TReactNativeEngine } from '../types'
+import { t_react_native_engine } from '../types'
 declare const global: {HermesInternal: null | unknown};
-export function detectReactNative() {
+export function detect_react_native() {
     try {
         if (
             typeof document === "undefined" &&
@@ -18,11 +18,11 @@ export function detectReactNative() {
 }
 
 
-export function reactNativeEngine(): TReactNativeEngine {
+export function react_native_engine(): t_react_native_engine {
     if (global && global.HermesInternal === null) {
-        return 'reactNativeJSC';
+        return 'react_native_jsc';
     }else {
-        return 'reactNativeHERMES'
+        return 'react_native_hermes'
     }
 }
 

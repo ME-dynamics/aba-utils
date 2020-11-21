@@ -1,4 +1,4 @@
-export function calculateParameters(range: number) {
+export function calculate_parameters(range: number) {
 	/* This does the equivalent of:
 	 * 
 	 *    bitsNeeded = Math.ceil(Math.log2(range));
@@ -11,16 +11,16 @@ export function calculateParameters(range: number) {
 	 * runtime and architecture individually.
 	 */
 	
-	let bitsNeeded = 0;
-	let bytesNeeded = 0;
+	let bits_needed = 0;
+	let bytes_needed = 0;
 	let mask = 1;
 	
 	while (range > 0) {
-		if (bitsNeeded % 8 === 0) {
-			bytesNeeded += 1;
+		if (bits_needed % 8 === 0) {
+			bytes_needed += 1;
 		}
 		
-		bitsNeeded += 1;
+		bits_needed += 1;
 		mask = mask << 1 | 1; /* 0x00001111 -> 0x00011111 */
 		
 		/* SECURITY PATCH (March 8, 2016):
@@ -33,5 +33,5 @@ export function calculateParameters(range: number) {
 		range = range >>> 1;  /* 0x01000000 -> 0x00100000 */
 	}
 	
-	return {bitsNeeded, bytesNeeded, mask};
+	return {bits_needed, bytes_needed, mask};
 }

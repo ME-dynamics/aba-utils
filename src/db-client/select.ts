@@ -1,37 +1,37 @@
-import { IBuildClient, ISelect, TResultSet } from "../types";
-import { ErrorFactory } from "../../";
+import { i_build_client, i_select, t_result_set } from "../types";
+import { error_factory } from "../../index";
 
 /**
  * wrapper around client.execute for cassandra driver
  * also checks uniqueness if needed
  * @param args
  */
-export function buildSelect(args: IBuildClient) {
+export function build_select(args: i_build_client) {
   const { client } = args;
 
-  return async function select(info: ISelect): Promise<TResultSet> {
-    const { query, params, unique, errorPath } = info;
+  return async function select(info: i_select): Promise<t_result_set> {
+    const { query, params, unique, error_path } = info;
     try {
       const result = await client.execute(query, params, { prepare: true });
       // check if row is unique
       if (unique && result.rowLength > 1) {
-        throw new ErrorFactory({
-          name: "rowMustBeUnique",
+        throw new error_factory({
+          name: "row_must_be_unique",
           message: "results should contain only one row",
           detail: `results: ${result.rows.toString()}, must be dealt with immediately. query: ${query}
              , params: ${params}, info: ${result.info}`,
-          path: errorPath,
-          nativeError: undefined,
+          path: error_path,
+          native_error: undefined,
         });
       }
       return result;
     } catch (error) {
-      throw new ErrorFactory({
-        name: "querySelectFailed",
+      throw new error_factory({
+        name: "query_select_failed",
         message: "problem in executing query",
         detail: `query: ${query}, params: ${params} failed to execute`,
-        path: errorPath,
-        nativeError: error,
+        path: error_path,
+        native_error: error,
       });
     }
   };

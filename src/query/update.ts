@@ -1,25 +1,25 @@
-import { separator, andStr } from "./constant";
-import { IUpdateQuery } from "../types";
+import { separator, and_str } from "./constant";
+import { i_update_query } from "../types";
 
-export function update(args: IUpdateQuery) {
+export function update_query(args: i_update_query) {
   const { table, version, values, where } = args;
-  const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
-  const updateInfo = [];
+  const table_name = `${table.toLowerCase()}_${version.toLowerCase()}`;
+  const update_info = [];
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
     const { column, value } = values[index];
 
     if (value === "self") {
-      updateInfo.push(`${column.toLowerCase()} = :${column.toLowerCase()}`);
+      update_info.push(`${column.toLowerCase()} = :${column.toLowerCase()}`);
     } else if (typeof value === "string") {
-      updateInfo.push(`${column.toLowerCase()} = '${value}'`);
+      update_info.push(`${column.toLowerCase()} = '${value}'`);
     } else if (value === null) {
-      updateInfo.push(`${column.toLowerCase()} = null`);
+      update_info.push(`${column.toLowerCase()} = null`);
     } else {
-      updateInfo.push(`${column.toLowerCase()} = ${value}`);
+      update_info.push(`${column.toLowerCase()} = ${value}`);
     }
   }
-  return `UPDATE ${tableName} SET ${updateInfo.join(
+  return `UPDATE ${table_name} SET ${update_info.join(
     separator
-  )} WHERE ${where.join(andStr)};`;
+  )} WHERE ${where.join(and_str)};`;
 }

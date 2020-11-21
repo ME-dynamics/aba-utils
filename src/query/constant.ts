@@ -1,3 +1,3 @@
 export const separator = ", ";
 
-export const andStr = " AND ";
+export const and_str = " AND ";

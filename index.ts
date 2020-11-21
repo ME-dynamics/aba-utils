@@ -1,30 +1,30 @@
 import * as types from "./src/types";
 export * as types from "./src/types";
-import { buildErrorFactory } from "./src/errorFactory";
+import { build_error_factory } from "./src/error_factory";
 
-export const ErrorFactory = buildErrorFactory();
-export { detect } from "./src/detect-env";
-export { secureRandomNumber } from "./src/random-digits";
-export { httpResult } from "./src/httpResult";
+export const error_factory = build_error_factory();
+export { detect_env } from "./src/detect-env";
+export { secure_random_number } from "./src/random-digits";
+export { http_result } from "./src/http-result";
 export { result } from "./src/result";
 
 export {
-  buildInit,
-  buildSelect,
-  buildUpsert,
-  buildDelete,
-} from "./src/dbClient";
+  build_delete,
+  build_init,
+  build_select,
+  build_upsert,
+} from "./src/db-client";
 
 export {
-  createType,
-  createTable,
+  create_table,
+  create_type,
   IN,
   equal,
-  greaterThan,
-  lessThan,
-  notEqual,
-  select,
-  deleteQuery,
-  insert,
-  update,
+  delete_query,
+  greater_than,
+  insert_query,
+  less_than,
+  not_equal,
+  select_query,
+  update_query,
 } from "./src/query";
