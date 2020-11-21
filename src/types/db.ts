@@ -1,4 +1,4 @@
-import { Client, types } from "cassandra-driver";
+import { Client, types } from "./cassandra";
 
 export type t_result_set = types.ResultSet;
 export type t_row = types.Row;
