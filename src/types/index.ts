@@ -1,6 +1,13 @@
 export { i_error } from "./error_factory";
 
-export { i_http, i_http_result, i_url, t_http_verbs } from "./http_result";
+export {
+  i_req_error,
+  i_payload,
+  i_error_result,
+  i_payload_result,
+  i_url,
+  t_http_verbs,
+} from "./http_result";
 
 export {
   t_detect_platform,

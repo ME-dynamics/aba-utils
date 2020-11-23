@@ -19,7 +19,6 @@ import {
   insufficient_space_on_resource,
   length_required,
   locked,
-  method_failure,
   method_not_allowed,
   not_acceptable,
   not_found,
@@ -56,7 +55,6 @@ import {
   permanent_redirect,
   see_other,
   temporary_redirect,
-  use_proxy,
 } from "./redirection";
 
 export const http_result = {
@@ -78,7 +76,6 @@ export const http_result = {
     permanent_redirect,
     see_other,
     temporary_redirect,
-    use_proxy,
   },
   server_error: {
     bad_gateway,
@@ -101,7 +98,6 @@ export const http_result = {
     insufficient_space_on_resource,
     length_required,
     locked,
-    method_failure,
     method_not_allowed,
     not_acceptable,
     not_found,
