@@ -80,7 +80,7 @@ export const http_result = {
     temporary_redirect,
     use_proxy,
   },
-  serverError: {
+  server_error: {
     bad_gateway,
     gateway_timeout,
     http_version_not_supported,
@@ -90,7 +90,7 @@ export const http_result = {
     not_implemented,
     service_unavailable,
   },
-  clientError: {
+  client_error: {
     bad_request,
     conflict,
     expectation_failed,
