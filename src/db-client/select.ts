@@ -1,5 +1,5 @@
 import { i_build_client, i_select, t_result_set } from "../types";
-import { error_factory } from "../../index";
+import { Error_Factory } from "../../index";
 
 /**
  * wrapper around client.execute for cassandra driver
@@ -15,7 +15,7 @@ export function build_select(args: i_build_client) {
       const result = await client.execute(query, params, { prepare: true });
       // check if row is unique
       if (unique && result.rowLength > 1) {
-        throw new error_factory({
+        throw new Error_Factory({
           name: "row_must_be_unique",
           message: "results should contain only one row",
           detail: `results: ${result.rows.toString()}, must be dealt with immediately. query: ${query}
@@ -26,7 +26,7 @@ export function build_select(args: i_build_client) {
       }
       return result;
     } catch (error) {
-      throw new error_factory({
+      throw new Error_Factory({
         name: "query_select_failed",
         message: "problem in executing query",
         detail: `query: ${query}, params: ${params} failed to execute`,

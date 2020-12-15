@@ -1,8 +1,8 @@
 import * as types from "./src/types";
 export * as types from "./src/types";
-import { build_error_factory } from "./src/error_factory";
+import { build_Error_Factory } from "./src/error_factory";
 
-export const Error_Factory = build_error_factory();
+export const Error_Factory = build_Error_Factory();
 export { detect_env } from "./src/detect-env";
 export { secure_random_number } from "./src/random-digits";
 export { http_result } from "./src/http-result";

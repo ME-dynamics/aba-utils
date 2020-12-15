@@ -1,5 +1,5 @@
 import { crypto_random } from "./crypto_random";
-import { error_factory } from "../../index";
+import { Error_Factory } from "../../index";
 import { detect_env } from "../detect-env";
 import { calculate_parameters } from "./calculate_parameters";
 import { i_secure_random_number } from "../types";
@@ -10,7 +10,7 @@ export async function secure_random_number(
   const { min, max } = args;
 
   if (!min) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "min_not_defined",
       message: "you should define min value",
       detail: "",
@@ -20,7 +20,7 @@ export async function secure_random_number(
   }
 
   if (!max) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "max_not_defined",
       message: "you should define max value",
       detail: "",
@@ -30,7 +30,7 @@ export async function secure_random_number(
   }
 
   if (min % 1 !== 0) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "min_not_integer",
       message: "you should define min as an integer",
       detail: "",
@@ -40,7 +40,7 @@ export async function secure_random_number(
   }
 
   if (max % 1 !== 0) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "max_not_integer",
       message: "you should define max as an integer",
       detail: "",
@@ -50,7 +50,7 @@ export async function secure_random_number(
   }
 
   if (!(max > min)) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "max_lower_than_min",
       message: "max must be greater than min",
       detail: "",
@@ -68,7 +68,7 @@ export async function secure_random_number(
    */
 
   if (min < -9007199254740991 || min > 9007199254740991) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "min_safe_integer",
       message: "must be safe integer ",
       detail: "",
@@ -78,7 +78,7 @@ export async function secure_random_number(
   }
 
   if (max < -9007199254740991 || max > 9007199254740991) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "max_safe_integer",
       message: "must be safe integer ",
       detail: "",
@@ -90,7 +90,7 @@ export async function secure_random_number(
   const range: number = max - min;
 
   if (range < -9007199254740991 || range > 9007199254740991) {
-    throw new error_factory({
+    throw new Error_Factory({
       name: "range_safe_integer",
       message: "must be safe integer ",
       detail: "",

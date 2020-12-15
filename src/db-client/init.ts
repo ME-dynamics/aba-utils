@@ -1,4 +1,4 @@
-import { error_factory } from "../../index";
+import { Error_Factory } from "../../index";
 import { i_build_client, i_init, t_result_set } from "../types";
 
 export function build_init(args: i_build_client) {
@@ -9,7 +9,7 @@ export function build_init(args: i_build_client) {
       const result = await client.execute(query, undefined, { prepare: true });
       return result;
     } catch (error) {
-      throw new error_factory({
+      throw new Error_Factory({
         name: "query_init_failed",
         message: "problem in executing query",
         detail: `query: ${query} failed to execute`,

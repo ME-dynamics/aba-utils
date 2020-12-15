@@ -1,11 +1,11 @@
 import { randomBytes } from "crypto";
-import { error_factory } from "../../index";
+import { Error_Factory } from "../../index";
 import { detect_env } from "../detect-env";
 
 export function crypto_random(value: number): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     if (!randomBytes || randomBytes === null) {
-      throw new error_factory({
+      throw new Error_Factory({
         name: "crypto_random_not_found",
         message: "No suitable random number generator available.",
         detail:
