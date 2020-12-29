@@ -4,26 +4,31 @@ export type t_result_set = types.ResultSet;
 export type t_row = types.Row;
 export type t_long = types.Long;
 
+export interface i_error_path {
+  error_path: string | undefined;
+}
+export interface i_scylla_client extends i_error_path {
+  contact_points: string[],
+  local_data_center: string,
+  keyspace: string
+}
 export interface i_build_client {
   client: Client;
 }
 
-export interface i_select {
+export interface i_select extends i_error_path {
   query: string;
   params: Record<string, any> | undefined;
   unique: true;
-  error_path: string | undefined;
 }
 
-export interface i_upsert {
+export interface i_query_exec extends i_error_path {
   query: string;
   params: Record<string, any> | undefined;
-  error_path: string | undefined;
 }
 
-export interface i_init {
+export interface i_init extends i_error_path {
   query: string;
-  error_path: string | undefined;
 }
 
 export type t_scylla_native_types =
@@ -82,7 +87,7 @@ export interface i_create_table {
 }
 
 export interface i_query {
-  name: string;
+  entity_name: string;
   query: string;
 }
 
@@ -149,5 +154,5 @@ export interface IN {
 // functions
 
 export type t_db_select_func = (info: i_select) => Promise<t_result_set>;
-export type t_db_upsert_func = (info: i_upsert) => Promise<t_result_set>;
+export type t_db_upsert_func = (info: i_query_exec) => Promise<t_result_set>;
 export type t_db_init_func = (info: i_init) => Promise<t_result_set>;

@@ -37,7 +37,7 @@ export {
   i_select,
   i_select_query,
   i_update_query,
-  i_upsert,
+  i_query_exec,
   i_values,
   t_db_init_func,
   t_db_select_func,
@@ -46,6 +46,7 @@ export {
   t_result_set,
   t_row,
   t_scylla_native_types,
+  i_scylla_client
 } from "./db";
 
 export { t_reply, t_request } from "./http";
