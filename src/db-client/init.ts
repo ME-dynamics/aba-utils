@@ -1,8 +1,21 @@
 import { Error_Factory } from "../../index";
 import { i_build_client, i_init, t_result_set } from "../types";
 
+
+
+
+/**
+ ** builds init function for initializing tables, UDTs etc
+ * @param args an object than contains a client instance of cassandra driver
+ * @returns  async function upsert 
+ */
 export function build_init(args: i_build_client) {
   const { client } = args;
+  /**
+   ** execute initialization statements
+   * @param info object containing initialize query and error path
+   * @returns scylla db result set
+   */
   return async function init(info: i_init): Promise<t_result_set> {
     const { query, error_path } = info;
     try {

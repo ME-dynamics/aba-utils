@@ -1,14 +1,23 @@
 import { i_build_client, i_select, t_result_set } from "../types";
 import { Error_Factory } from "../../index";
 
+
 /**
- * wrapper around client.execute for cassandra driver
- * also checks uniqueness if needed
- * @param args
+ ** builds select function for selecting rows, also check uniqueness if needed
+ * @param args an object than contains a client instance of cassandra driver
+ * @returns  async function upsert 
  */
 export function build_select(args: i_build_client) {
   const { client } = args;
-
+  /**
+   ** select rows from db using client, if row needs to be unique, it will
+   ** check uniqueness. meaning there should be only one result per query ( for each partition key )
+   ** if not will result and Error Factory.
+   * !remember if this happens in code. it's a design flaw and should be
+   * !fixed immediately. must be caught on testing   
+   * @param info an object containing query string, params, unique and error path
+   * @returns scylla db result set 
+   */
   return async function select(info: i_select): Promise<t_result_set> {
     const { query, params, unique, error_path } = info;
     try {
