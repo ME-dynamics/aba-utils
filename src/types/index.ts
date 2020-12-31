@@ -20,7 +20,7 @@ export { i_secure_random_number } from "./random_digits";
 export { i_result } from "./result";
 
 export {
-  IN,
+  i_IN,
   i_build_client,
   i_create_table,
   i_create_type,
@@ -46,7 +46,9 @@ export {
   t_result_set,
   t_row,
   t_scylla_native_types,
-  i_scylla_client
+  i_scylla_client,
+  i_create_index,
+  i_error_path
 } from "./db";
 
 export { t_reply, t_request } from "./http";
