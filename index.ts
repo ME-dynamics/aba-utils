@@ -18,4 +18,4 @@ export { scylla_client } from "./src/db-client";
 export * as query_gen from "./src/query";
 
 
-
+export { http_client } from "./src/http-client"
