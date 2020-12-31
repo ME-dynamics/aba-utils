@@ -2,11 +2,11 @@ import { i_db_column } from "../types";
 
 
 /**
- * generates a string of db columns with their types
- * separated by  ,  for valid syntax for cql in scylla db
- * @param columns 
+ * stringify an array of db columns 
+ * @param columns an array of i_db_column
+ * @returns a string of db columns with their types, like - id uuid, name text. separated by ' , ' for a valid syntax (cql, scylla db)
  */
-export function column_stringify(columns: i_db_column[]) {
+export function column_stringify(columns: i_db_column[]): string {
   const columnString: string[] = [];
   for (let index = 0; index < columns.length; index++) {
     const { name, type, set_type, udt_name, map } = columns[index];
