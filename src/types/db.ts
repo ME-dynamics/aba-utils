@@ -99,6 +99,12 @@ export interface i_create_table {
   };
 }
 
+export interface i_material_view {
+  name: string;
+  version: string;
+  select_query: string;
+  primary_key: i_primary_key;
+}
 export interface i_query {
   entity_name: string;
   query: string;

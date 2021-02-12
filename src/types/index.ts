@@ -48,7 +48,7 @@ export {
   t_scylla_native_types,
   i_scylla_client,
   i_create_index,
-  i_error_path
+  i_material_view
 } from "./db";
 
 export { t_reply, t_request } from "./http";
