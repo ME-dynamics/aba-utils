@@ -1,6 +1,6 @@
 
 import { Error_Factory } from "../../index";
-import { i_build_client, i_query_exec, t_result_set } from "../types";
+import { i_build_db_func, i_query_exec, t_result_set } from "../types";
 
 
 
@@ -9,7 +9,7 @@ import { i_build_client, i_query_exec, t_result_set } from "../types";
  * @param args an object than contains a client instance of cassandra driver
  * @returns  async function delete 
  */
-export function build_delete(args: i_build_client) {
+export function build_delete(args: i_build_db_func) {
   const { client } = args;
   /**
    ** delete function uses db client to delete database rows 

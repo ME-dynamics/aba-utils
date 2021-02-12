@@ -1,5 +1,5 @@
 import { Error_Factory } from "../../index";
-import { i_build_client, i_init, t_result_set } from "../types";
+import { i_build_db_func, i_init, t_result_set } from "../types";
 
 
 
@@ -9,7 +9,7 @@ import { i_build_client, i_init, t_result_set } from "../types";
  * @param args an object than contains a client instance of cassandra driver
  * @returns  async function upsert 
  */
-export function build_init(args: i_build_client) {
+export function build_init(args: i_build_db_func) {
   const { client } = args;
   /**
    ** execute initialization statements

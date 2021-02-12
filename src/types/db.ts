@@ -4,7 +4,7 @@ export type t_result_set = types.ResultSet;
 export type t_row = types.Row;
 export type t_long = types.Long;
 
-export interface i_error_path {
+interface i_error_path {
   error_path: string | undefined;
 }
 export interface i_scylla_client extends i_error_path {
@@ -12,7 +12,7 @@ export interface i_scylla_client extends i_error_path {
   local_data_center: string;
   keyspace: string;
 }
-export interface i_build_client {
+export interface i_build_db_func {
   client: Client;
 }
 

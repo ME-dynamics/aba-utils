@@ -1,4 +1,4 @@
-import { i_build_client, i_select, t_result_set } from "../types";
+import { i_build_db_func, i_select, t_result_set } from "../types";
 import { Error_Factory } from "../../index";
 
 
@@ -7,7 +7,7 @@ import { Error_Factory } from "../../index";
  * @param args an object than contains a client instance of cassandra driver
  * @returns  async function upsert 
  */
-export function build_select(args: i_build_client) {
+export function build_select(args: i_build_db_func) {
   const { client } = args;
   /**
    ** select rows from db using client, if row needs to be unique, it will

@@ -21,7 +21,7 @@ export { i_result } from "./result";
 
 export {
   i_IN,
-  i_build_client,
+  i_build_db_func,
   i_create_table,
   i_create_type,
   i_db_column,
