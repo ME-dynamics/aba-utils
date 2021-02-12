@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>i_build_client | aba-utils</title>
+	<title>i_material_view | aba-utils</title>
 	<meta name="description" content="Documentation for aba-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -58,10 +58,10 @@
 					<a href="../modules/types.html">types</a>
 				</li>
 				<li>
-					<a href="types.i_build_client.html">i_build_client</a>
+					<a href="types.i_material_view.html">i_material_view</a>
 				</li>
 			</ul>
-			<h1>Interface i_build_client</h1>
+			<h1>Interface i_material_view</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">i_build_client</span>
+						<span class="target">i_material_view</span>
 					</li>
 				</ul>
 			</section>
@@ -83,7 +83,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_build_client.html#client" class="tsd-kind-icon">client</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_material_view.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_material_view.html#primary_key" class="tsd-kind-icon">primary_<wbr>key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_material_view.html#select_query" class="tsd-kind-icon">select_<wbr>query</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_material_view.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,12 +95,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="client" class="tsd-anchor"></a>
-					<h3>client</h3>
-					<div class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Client</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/76d232b/src/types/db.ts#L16">src/types/db.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/types/db.ts#L103">src/types/db.ts:103</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="primary_key" class="tsd-anchor"></a>
+					<h3>primary_<wbr>key</h3>
+					<div class="tsd-signature tsd-kind-icon">primary_<wbr>key<span class="tsd-signature-symbol">:</span> <a href="types.i_primary_key.html" class="tsd-signature-type" data-tsd-kind="Interface">i_primary_key</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/types/db.ts#L106">src/types/db.ts:106</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="select_query" class="tsd-anchor"></a>
+					<h3>select_<wbr>query</h3>
+					<div class="tsd-signature tsd-kind-icon">select_<wbr>query<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/types/db.ts#L105">src/types/db.ts:105</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="version" class="tsd-anchor"></a>
+					<h3>version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/types/db.ts#L104">src/types/db.ts:104</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,10 +170,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="types.i_build_client.html" class="tsd-kind-icon">i_<wbr>build_<wbr>client</a>
+						<a href="types.i_material_view.html" class="tsd-kind-icon">i_<wbr>material_<wbr>view</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.i_build_client.html#client" class="tsd-kind-icon">client</a>
+								<a href="types.i_material_view.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="types.i_material_view.html#primary_key" class="tsd-kind-icon">primary_<wbr>key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="types.i_material_view.html#select_query" class="tsd-kind-icon">select_<wbr>query</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="types.i_material_view.html#version" class="tsd-kind-icon">version</a>
 							</li>
 						</ul>
 					</li>
