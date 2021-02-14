@@ -1,5 +1,7 @@
 export { create_table_query } from "./create_table_query";
 export { create_type_query } from "./create_type_query";
+export { create_index_query } from "./create_index_query";
+export { create_material_view } from "./create_material_view"
 export { select_query } from "./select";
 export { delete_query } from "./delete";
 export { insert_query } from "./insert";
