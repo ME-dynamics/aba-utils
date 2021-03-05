@@ -17,5 +17,8 @@ export { scylla_client } from "./src/db-client";
 
 export * as query_gen from "./src/query";
 
+export { http_client } from "./src/http-client";
 
-export { http_client } from "./src/http-client"
+export { null_to_undefined } from "./src/null_to_undefined";
+
+export { StatusCodes as status_codes } from "http-status-codes"
