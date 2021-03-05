@@ -13,9 +13,9 @@ export function update_query(args: i_update_query) {
   const if_clause = lwt ? `IF ${lwt.join(and_str)}` : "";
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
-    const { column, value } = values[index];
+    const { column, value, self } = values[index];
 
-    if (value === "self") {
+    if (self) {
       update_info.push(`${column.toLowerCase()} = :${column.toLowerCase()}`);
     } else if (typeof value === "string") {
       update_info.push(`${column.toLowerCase()} = '${value}'`);

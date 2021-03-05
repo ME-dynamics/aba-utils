@@ -14,9 +14,9 @@ export function insert_query(args: i_insert_query) {
   const if_clause = lwt ? `IF ${lwt.join(and_str)}` : "";
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
-    const { column, value } = values[index];
+    const { column, value, self } = values[index];
     columns.push(column.toLowerCase());
-    if (value === "self") {
+    if (self) {
       clmn_values.push(`:${column.toLowerCase()}`);
     } else if (typeof value === "string") {
       clmn_values.push(`'${value}'`);

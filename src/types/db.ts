@@ -112,7 +112,8 @@ export interface i_query {
 
 export interface i_values {
   column: string;
-  value: "self" | string | number | boolean | null;
+  value?: string | number | boolean | null;
+  self?: boolean;
 }
 export interface i_insert_query {
   table: string;
