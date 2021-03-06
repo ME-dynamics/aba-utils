@@ -78,6 +78,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="query_gen.html#create_index_query" class="tsd-kind-icon">create_<wbr>index_<wbr>query</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="query_gen.html#create_material_view" class="tsd-kind-icon">create_<wbr>material_<wbr>view</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="query_gen.html#create_table_query" class="tsd-kind-icon">create_<wbr>table_<wbr>query</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="query_gen.html#create_type_query" class="tsd-kind-icon">create_<wbr>type_<wbr>query</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="query_gen.html#delete_query" class="tsd-kind-icon">delete_<wbr>query</a></li>
@@ -92,6 +94,75 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="create_index_query" class="tsd-anchor"></a>
+					<h3>create_<wbr>index_<wbr>query</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create_<wbr>index_<wbr>query<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="../interfaces/types.i_create_index.html" class="tsd-signature-type" data-tsd-kind="Interface">i_create_index</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/create_index_query.ts#L9">src/query/create_index_query.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<ul>
+										<li>create index on a field that&#39;s outside primary key in scylla db, it checks if index exists</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="../interfaces/types.i_create_index.html" class="tsd-signature-type" data-tsd-kind="Interface">i_create_index</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>an object containing index name, table name, index and table version (must be in sync)
+										index_key ( the key you want to index ), if needed add index locally instead of globally</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>index query string</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="create_material_view" class="tsd-anchor"></a>
+					<h3>create_<wbr>material_<wbr>view</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">create_<wbr>material_<wbr>view<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><a href="../interfaces/types.i_material_view.html" class="tsd-signature-type" data-tsd-kind="Interface">i_material_view</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/types.i_query.html" class="tsd-signature-type" data-tsd-kind="Interface">i_query</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/create_material_view.ts#L9">src/query/create_material_view.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<ul>
+										<li>builds a materialized view query for scylla db, it checks if view exists</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <a href="../interfaces/types.i_material_view.html" class="tsd-signature-type" data-tsd-kind="Interface">i_material_view</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>an object containing view name, version, select query, and primary key</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.i_query.html" class="tsd-signature-type" data-tsd-kind="Interface">i_query</a></h4>
+							<p>an object containing view name, and query string</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
 					<a name="create_table_query" class="tsd-anchor"></a>
 					<h3>create_<wbr>table_<wbr>query</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
@@ -101,7 +172,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/query/create_table_query.ts#L10">src/query/create_table_query.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/create_table_query.ts#L10">src/query/create_table_query.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -135,7 +206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/query/create_type_query.ts#L10">src/query/create_type_query.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/create_type_query.ts#L10">src/query/create_type_query.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,7 +240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/query/delete.ts#L11">src/query/delete.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/delete.ts#L11">src/query/delete.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -204,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/query/insert.ts#L9">src/query/insert.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/insert.ts#L9">src/query/insert.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,7 +304,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/query/select.ts#L10">src/query/select.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/select.ts#L10">src/query/select.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -267,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/query/update.ts#L9">src/query/update.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/query/update.ts#L9">src/query/update.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -319,6 +390,12 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="query_gen.html#create_index_query" class="tsd-kind-icon">create_<wbr>index_<wbr>query</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="query_gen.html#create_material_view" class="tsd-kind-icon">create_<wbr>material_<wbr>view</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="query_gen.html#create_table_query" class="tsd-kind-icon">create_<wbr>table_<wbr>query</a>
 					</li>

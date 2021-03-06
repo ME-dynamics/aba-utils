@@ -72,6 +72,12 @@
 								<li class="tsd-kind-namespace"><a href="modules/types.html" class="tsd-kind-icon">types</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-is-external"><a href="enums/status_codes.html" class="tsd-kind-icon">status_<wbr>codes</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
@@ -83,6 +89,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="modules.html#detect_env" class="tsd-kind-icon">detect_<wbr>env</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#http_client" class="tsd-kind-icon">http_<wbr>client</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#null_to_undefined" class="tsd-kind-icon">null_<wbr>to_<wbr>undefined</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#result" class="tsd-kind-icon">result</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#scylla_client" class="tsd-kind-icon">scylla_<wbr>client</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#secure_random_number" class="tsd-kind-icon">secure_<wbr>random_<wbr>number</a></li>
@@ -99,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">Error_<wbr><wbr>Factory<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">Error_Factory</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/index.ts#L5">index.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/index.ts#L5">index.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -116,7 +123,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/detect-env/index.ts#L13">src/detect-env/index.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/detect-env/index.ts#L13">src/detect-env/index.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -142,7 +149,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/http-client/index.ts#L12">src/http-client/index.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/http-client/index.ts#L12">src/http-client/index.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -167,6 +174,42 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="null_to_undefined" class="tsd-anchor"></a>
+					<h3>null_<wbr>to_<wbr>undefined</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">null_<wbr>to_<wbr>undefined&lt;T&gt;<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/null_to_undefined.ts#L10">src/null_to_undefined.ts:10</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>if passed a null value returns undefined otherwise returns value
+									it&#39;s useful to turn scylla db null columns to undefined</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></h4>
+							<p>undefined, value</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="result" class="tsd-anchor"></a>
 					<h3>result</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
@@ -176,7 +219,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/result.ts#L10">src/result.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/result.ts#L10">src/result.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -214,7 +257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/db-client/index.ts#L16">src/db-client/index.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/db-client/index.ts#L16">src/db-client/index.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -382,7 +425,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/f7643d3/src/random-digits/secure_random_number.ts#L14">src/random-digits/secure_random_number.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/11ee404/src/random-digits/secure_random_number.ts#L14">src/random-digits/secure_random_number.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -439,6 +482,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-is-external">
+						<a href="enums/status_codes.html" class="tsd-kind-icon">status_<wbr>codes</a>
+					</li>
 					<li class=" tsd-kind-variable">
 						<a href="modules.html#error_factory" class="tsd-kind-icon">Error_<wbr><wbr>Factory</a>
 					</li>
@@ -447,6 +493,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#http_client" class="tsd-kind-icon">http_<wbr>client</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#null_to_undefined" class="tsd-kind-icon">null_<wbr>to_<wbr>undefined</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="modules.html#result" class="tsd-kind-icon">result</a>
