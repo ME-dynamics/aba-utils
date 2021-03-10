@@ -1,6 +1,6 @@
 {
   "name": "aba-utils",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "node library: aba-utils",
   "main": "build/index.js",
   "repository": "https://github.com/eyousefifar/aba-utils",
@@ -10,7 +10,7 @@
     "clean": "rimraf build && rimraf docs/*",
     "typedoc": "typedoc --readme ./README.md",
     "prepack": "npm run clean && tsc && npm run typedoc",
-    "test": "jest --coverage=true",
+    "test": "jest",
     "test:watch": "jest --watch"
   },
   "devDependencies": {
