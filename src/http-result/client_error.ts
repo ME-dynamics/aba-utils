@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { i_error_result, i_req_error } from "../types";
+import { IErrorResult, IReqError } from "../types";
 
 /**
  ** general function for http client error
@@ -7,9 +7,9 @@ import { i_error_result, i_req_error } from "../types";
  * @param code http status code
  * @returns an object containing error number and error string
  */
-function client_error(args: i_req_error, code: number): i_error_result {
+function clientError(args: IReqError, code: number): IErrorResult {
   const { error } = args;
-  if (!error) throw new Error("error must be defined");
+  if (!error) throw new Error("HTTP: client error must be defined");
   return {
     code,
     error,
@@ -21,8 +21,8 @@ function client_error(args: i_req_error, code: number): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function bad_request(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.BAD_REQUEST);
+export function badRequest(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.BAD_REQUEST);
 }
 
 /**
@@ -30,8 +30,8 @@ export function bad_request(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function unauthorized(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.UNAUTHORIZED);
+export function unauthorized(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.UNAUTHORIZED);
 }
 
 /**
@@ -39,8 +39,8 @@ export function unauthorized(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function payment_required(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.PAYMENT_REQUIRED);
+export function paymentRequired(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.PAYMENT_REQUIRED);
 }
 
 /**
@@ -48,8 +48,8 @@ export function payment_required(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function forbidden(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.FORBIDDEN);
+export function forbidden(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.FORBIDDEN);
 }
 
 /**
@@ -57,8 +57,8 @@ export function forbidden(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function not_found(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.NOT_FOUND);
+export function notFound(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.NOT_FOUND);
 }
 
 /**
@@ -66,8 +66,8 @@ export function not_found(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function method_not_allowed(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.METHOD_NOT_ALLOWED);
+export function methodNotAllowed(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.METHOD_NOT_ALLOWED);
 }
 
 /**
@@ -76,8 +76,8 @@ export function method_not_allowed(args: i_req_error): i_error_result {
  * @returns an object containing error number and error string
  */
 
-export function not_acceptable(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.NOT_ACCEPTABLE);
+export function notAcceptable(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.NOT_ACCEPTABLE);
 }
 
 /**
@@ -85,10 +85,10 @@ export function not_acceptable(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function proxy_authentication_required(
-  args: i_req_error
-): i_error_result {
-  return client_error(args, StatusCodes.PROXY_AUTHENTICATION_REQUIRED);
+export function proxyAuthenticationRequired(
+  args: IReqError
+): IErrorResult {
+  return clientError(args, StatusCodes.PROXY_AUTHENTICATION_REQUIRED);
 }
 
 /**
@@ -96,8 +96,8 @@ export function proxy_authentication_required(
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function request_timeout(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.REQUEST_TIMEOUT);
+export function requestTimeout(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.REQUEST_TIMEOUT);
 }
 
 /**
@@ -106,8 +106,8 @@ export function request_timeout(args: i_req_error): i_error_result {
  * @returns an object containing error number and error string
  */
 
-export function conflict(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.CONFLICT);
+export function conflict(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.CONFLICT);
 }
 
 /**
@@ -115,8 +115,8 @@ export function conflict(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function gone(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.GONE);
+export function gone(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.GONE);
 }
 
 /**
@@ -124,8 +124,8 @@ export function gone(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function length_required(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.LENGTH_REQUIRED);
+export function lengthRequired(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.LENGTH_REQUIRED);
 }
 
 /**
@@ -133,8 +133,8 @@ export function length_required(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function precondition_failed(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.PRECONDITION_FAILED);
+export function preconditionFailed(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.PRECONDITION_FAILED);
 }
 
 /**
@@ -142,8 +142,8 @@ export function precondition_failed(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function request_entity_too_large(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.REQUEST_TOO_LONG);
+export function requestEntityTooLarge(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.REQUEST_TOO_LONG);
 }
 
 
@@ -152,8 +152,8 @@ export function request_entity_too_large(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function request_uri_too_long(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.REQUEST_URI_TOO_LONG);
+export function requestUriTooLong(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.REQUEST_URI_TOO_LONG);
 }
 
 /**
@@ -161,8 +161,8 @@ export function request_uri_too_long(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function unsupported_media_type(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.UNSUPPORTED_MEDIA_TYPE);
+export function unsupportedMediaType(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.UNSUPPORTED_MEDIA_TYPE);
 }
 
 /**
@@ -170,10 +170,10 @@ export function unsupported_media_type(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function requested_range_not_satisfiable(
-  args: i_req_error
-): i_error_result {
-  return client_error(args, StatusCodes.REQUESTED_RANGE_NOT_SATISFIABLE);
+export function requestedRangeNotSatisfiable(
+  args: IReqError
+): IErrorResult {
+  return clientError(args, StatusCodes.REQUESTED_RANGE_NOT_SATISFIABLE);
 }
 
 /**
@@ -181,8 +181,8 @@ export function requested_range_not_satisfiable(
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function expectation_failed(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.EXPECTATION_FAILED);
+export function expectationFailed(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.EXPECTATION_FAILED);
 }
 
 /**
@@ -190,8 +190,8 @@ export function expectation_failed(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function im_a_teapot(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.IM_A_TEAPOT);
+export function imATeapot(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.IM_A_TEAPOT);
 }
 
 /**
@@ -199,14 +199,14 @@ export function im_a_teapot(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function insufficient_space_on_resource(
-  args: i_req_error
-): i_error_result {
-  return client_error(args, StatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE);
+export function insufficientSpaceOnResource(
+  args: IReqError
+): IErrorResult {
+  return clientError(args, StatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE);
 }
 
-// export function method_failure(args: i_req_error): i_error_result {
-//   return client_error(args, StatusCodes.METHOD_FAILURE);
+// export function method_failure(args: IReqError): IErrorResult {
+//   return clientError(args, StatusCodes.METHOD_FAILURE);
 // }
 
 /**
@@ -214,8 +214,8 @@ export function insufficient_space_on_resource(
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function un_processable_entity(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.UNPROCESSABLE_ENTITY);
+export function unProcessableEntity(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.UNPROCESSABLE_ENTITY);
 }
 
 /**
@@ -223,8 +223,8 @@ export function un_processable_entity(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function locked(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.LOCKED);
+export function locked(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.LOCKED);
 }
 
 /**
@@ -232,8 +232,8 @@ export function locked(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function failed_dependency(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.FAILED_DEPENDENCY);
+export function failedDependency(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.FAILED_DEPENDENCY);
 }
 
 /**
@@ -241,8 +241,8 @@ export function failed_dependency(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function precondition_required(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.PRECONDITION_REQUIRED);
+export function preconditionRequired(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.PRECONDITION_REQUIRED);
 }
 
 /**
@@ -250,8 +250,8 @@ export function precondition_required(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function too_many_requests(args: i_req_error): i_error_result {
-  return client_error(args, StatusCodes.TOO_MANY_REQUESTS);
+export function tooManyRequests(args: IReqError): IErrorResult {
+  return clientError(args, StatusCodes.TOO_MANY_REQUESTS);
 }
 
 /**
@@ -259,10 +259,10 @@ export function too_many_requests(args: i_req_error): i_error_result {
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function request_header_fields_too_large(
-  args: i_req_error
-): i_error_result {
-  return client_error(args, StatusCodes.REQUEST_HEADER_FIELDS_TOO_LARGE);
+export function requestHeaderFieldsTooLarge(
+  args: IReqError
+): IErrorResult {
+  return clientError(args, StatusCodes.REQUEST_HEADER_FIELDS_TOO_LARGE);
 }
 
 /**
@@ -270,8 +270,8 @@ export function request_header_fields_too_large(
  * @param args an object that contains request error text
  * @returns an object containing error number and error string
  */
-export function unavailable_for_legal_reasons(
-  args: i_req_error
-): i_error_result {
-  return client_error(args, StatusCodes.UNAVAILABLE_FOR_LEGAL_REASONS);
+export function unavailableForLegalReasons(
+  args: IReqError
+): IErrorResult {
+  return clientError(args, StatusCodes.UNAVAILABLE_FOR_LEGAL_REASONS);
 }

@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { i_payload_result, i_payload } from "../types";
+import { IPayloadResult, IPayload } from "../types";
 
 
 /**
@@ -8,9 +8,9 @@ import { i_payload_result, i_payload } from "../types";
  * @param code http status code number
  * @returns an object containing code number and payload
  */
-function success<T>(args: i_payload<T>, code: number): i_payload_result<T> {
+function success<T>(args: IPayload<T>, code: number): IPayloadResult<T> {
   const { payload } = args;
-  if (!payload) throw new Error("payload must be defined in ok status code");
+  if (!payload) throw new Error("HTTP: payload must be defined");
   return {
     code,
     payload,
@@ -22,7 +22,7 @@ function success<T>(args: i_payload<T>, code: number): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function ok<T>(args: i_payload<T>): i_payload_result<T> {
+export function ok<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.OK);
 }
 
@@ -31,7 +31,7 @@ export function ok<T>(args: i_payload<T>): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function created<T>(args: i_payload<T>): i_payload_result<T> {
+export function created<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.CREATED);
 }
 
@@ -40,7 +40,7 @@ export function created<T>(args: i_payload<T>): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function no_content<T>(args: i_payload<T>): i_payload_result<T> {
+export function noContent<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.NO_CONTENT);
 }
 
@@ -51,7 +51,7 @@ export function no_content<T>(args: i_payload<T>): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function accepted<T>(args: i_payload<T>): i_payload_result<T> {
+export function accepted<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.ACCEPTED);
 }
 
@@ -60,9 +60,9 @@ export function accepted<T>(args: i_payload<T>): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function non_authoritative_information<T>(
-  args: i_payload<T>
-): i_payload_result<T> {
+export function nonAuthoritativeInformation<T>(
+  args: IPayload<T>
+): IPayloadResult<T> {
   return success(args, StatusCodes.NON_AUTHORITATIVE_INFORMATION);
 }
 
@@ -71,7 +71,7 @@ export function non_authoritative_information<T>(
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function reset_content<T>(args: i_payload<T>): i_payload_result<T> {
+export function resetContent<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.RESET_CONTENT);
 }
 
@@ -80,7 +80,7 @@ export function reset_content<T>(args: i_payload<T>): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function partial_content<T>(args: i_payload<T>): i_payload_result<T> {
+export function partialContent<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.PARTIAL_CONTENT);
 }
 
@@ -89,6 +89,6 @@ export function partial_content<T>(args: i_payload<T>): i_payload_result<T> {
  * @param args an object containing payload object
  * @returns an object containing code number and payload
  */
-export function multi_status<T>(args: i_payload<T>): i_payload_result<T> {
+export function multiStatus<T>(args: IPayload<T>): IPayloadResult<T> {
   return success(args, StatusCodes.MULTI_STATUS);
 }

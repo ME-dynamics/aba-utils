@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { i_error_result, i_req_error } from "../types";
+import { IErrorResult, IReqError } from "../types";
 
 /**
  ** general function for server error 
@@ -7,9 +7,9 @@ import { i_error_result, i_req_error } from "../types";
  * @param code 
  * @returns an object containing code number and error string
  */
-function server_error(args: i_req_error, code: number): i_error_result {
+function serverError(args: IReqError, code: number): IErrorResult {
     const { error } = args;
-    if (!error) throw new Error("error must be defined")
+    if (!error) throw new Error("HTTP: server error must be defined")
     return {
       code,
       error
@@ -22,8 +22,8 @@ function server_error(args: i_req_error, code: number): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function internal_server_error(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.INTERNAL_SERVER_ERROR);
+export function internalServerError(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.INTERNAL_SERVER_ERROR);
 }
 
 
@@ -32,8 +32,8 @@ export function internal_server_error(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function not_implemented(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.NOT_IMPLEMENTED);
+export function notImplemented(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.NOT_IMPLEMENTED);
 }
 
 /**
@@ -41,8 +41,8 @@ export function not_implemented(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function bad_gateway(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.BAD_GATEWAY);
+export function badGateway(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.BAD_GATEWAY);
 }
 
 /**
@@ -50,8 +50,8 @@ export function bad_gateway(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function service_unavailable(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.SERVICE_UNAVAILABLE);
+export function serviceUnavailable(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.SERVICE_UNAVAILABLE);
 }
 
 /**
@@ -59,8 +59,8 @@ export function service_unavailable(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function gateway_timeout(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.GATEWAY_TIMEOUT);
+export function gatewayTimeout(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.GATEWAY_TIMEOUT);
 }
 
 /**
@@ -68,8 +68,8 @@ export function gateway_timeout(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function http_version_not_supported(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.HTTP_VERSION_NOT_SUPPORTED);
+export function httpVersionNotSupported(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.HTTP_VERSION_NOT_SUPPORTED);
 }
 
 
@@ -78,8 +78,8 @@ export function http_version_not_supported(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function insufficient_storage(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.INSUFFICIENT_STORAGE);
+export function insufficientStorage(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.INSUFFICIENT_STORAGE);
 }
 
 /**
@@ -87,6 +87,6 @@ export function insufficient_storage(args: i_req_error): i_error_result {
  * @param args 
  * @returns an object containing code number and error string
  */
-export function network_authentication_required(args: i_req_error): i_error_result {
-    return server_error(args, StatusCodes.NETWORK_AUTHENTICATION_REQUIRED);
+export function networkAuthenticationRequired(args: IReqError): IErrorResult {
+    return serverError(args, StatusCodes.NETWORK_AUTHENTICATION_REQUIRED);
 }

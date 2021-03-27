@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { i_payload_result, i_url } from "../types";
+import { IPayloadResult, IUrl } from "../types";
 
 
 /**
@@ -8,9 +8,9 @@ import { i_payload_result, i_url } from "../types";
  * @param code http status number
  * @returns an object containing code number, and payload object ( with url key )
  */
-function redirection(args: i_url, code: number): i_payload_result<i_url> {
+function redirection(args: IUrl, code: number): IPayloadResult<IUrl> {
     const  { url } = args;
-    if(!url) throw new Error("url must be defined")
+    if(!url) throw new Error("HTTP: client url must be defined")
     return {
         code,
         payload: {
@@ -24,7 +24,7 @@ function redirection(args: i_url, code: number): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function multiple_choices(args: i_url): i_payload_result<i_url> {
+export function multipleChoices(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.MULTIPLE_CHOICES)
 }
 
@@ -33,7 +33,7 @@ export function multiple_choices(args: i_url): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function moved_permanently(args: i_url): i_payload_result<i_url> {
+export function movedPermanently(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.MOVED_PERMANENTLY)
 }
 
@@ -42,7 +42,7 @@ export function moved_permanently(args: i_url): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function moved_temporarily(args: i_url): i_payload_result<i_url> {
+export function movedTemporarily(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.MOVED_TEMPORARILY)
 }
 
@@ -51,7 +51,7 @@ export function moved_temporarily(args: i_url): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function see_other(args: i_url): i_payload_result<i_url> {
+export function seeOther(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.SEE_OTHER)
 }
 
@@ -60,11 +60,11 @@ export function see_other(args: i_url): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function not_modified(args: i_url): i_payload_result<i_url> {
+export function notModified(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.NOT_MODIFIED)
 }
 
-// export function use_proxy(args: i_url): i_payload_result<i_url> {
+// export function use_proxy(args: IUrl): IPayloadResult<IUrl> {
 //     return redirection(args, StatusCodes.USE_PROXY)
 // }
 
@@ -73,7 +73,7 @@ export function not_modified(args: i_url): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function temporary_redirect(args: i_url): i_payload_result<i_url> {
+export function temporaryRedirect(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.TEMPORARY_REDIRECT)
 }
 /**
@@ -81,6 +81,6 @@ export function temporary_redirect(args: i_url): i_payload_result<i_url> {
  * @param args an object containing a url string 
  * @returns an object containing code number, and payload object ( with url key )
  */
-export function permanent_redirect(args: i_url): i_payload_result<i_url> {
+export function permanentRedirect(args: IUrl): IPayloadResult<IUrl> {
     return redirection(args, StatusCodes.PERMANENT_REDIRECT)
 }
