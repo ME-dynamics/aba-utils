@@ -1,11 +1,11 @@
-import { i_primary_key } from "../types";
+import { IPrimaryKey } from "../types";
 
 /**
  ** turn partition key and clustering key into valid
  ** scylla db cql format
  * @param keys an object containing partition and clustering keys
  */
-export function primary_key_stringify(keys: i_primary_key) {
+export function primaryKeyStringify(keys: IPrimaryKey) {
   const { partition, cluster } = keys;
   /**
    * check if keys contain ',' character, it's not allowed
@@ -19,20 +19,20 @@ export function primary_key_stringify(keys: i_primary_key) {
   ) {
     throw new Error("not allowed to use ',' in your keys");
   }
-  let partition_key: string;
+  let partitionKey: string;
   if (partition.length === 0) {
     throw new Error("you must define at least one partition key");
   } else if (partition.length === 1) {
-    partition_key = `${partition[0]}`;
+    partitionKey = `${partition[0]}`;
   } else {
-    partition_key = `(${partition.join(", ")})`;
+    partitionKey = `(${partition.join(", ")})`;
   }
   if (!cluster) {
-    return `(${partition_key})`;
+    return `(${partitionKey})`;
   }
   if (cluster && cluster.length === 1) {
-    return `(${partition_key}, ${cluster[0]})`;
+    return `(${partitionKey}, ${cluster[0]})`;
   } else {
-    return `(${partition_key}, ${cluster ? cluster.join(", ") : ""})`;
+    return `(${partitionKey}, ${cluster ? cluster.join(", ") : ""})`;
   }
 }

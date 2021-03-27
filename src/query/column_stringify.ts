@@ -1,4 +1,4 @@
-import { i_db_column } from "../types";
+import { IDbColumn } from "../types";
 
 
 /**
@@ -6,19 +6,19 @@ import { i_db_column } from "../types";
  * @param columns an array of i_db_column
  * @returns a string of db columns with their types, like - id uuid, name text. separated by ' , ' for a valid syntax (cql, scylla db)
  */
-export function column_stringify(columns: i_db_column[]): string {
+export function columnStringify(columns: IDbColumn[]): string {
   const columnString: string[] = [];
   for (let index = 0; index < columns.length; index++) {
-    const { name, type, set_type, udt_name, map } = columns[index];
+    const { name, type, setType, udtName, map } = columns[index];
     /**
      * if column type is UDT (user defined types) 
      * udtName variable should be defined
      */
     if (type === "UDT") {
-      if (!udt_name)
+      if (!udtName)
         throw new Error("udt name must be defined when type is set to UDT");
       // push db column with udt as type
-      columnString.push(`${name.toLowerCase()} ${udt_name.toLowerCase()}`);
+      columnString.push(`${name.toLowerCase()} ${udtName.toLowerCase()}`);
       /**
        * if type is a set, setType must be defined
        * set is a sorted list with a type : set<type>
@@ -26,20 +26,20 @@ export function column_stringify(columns: i_db_column[]): string {
        * and db column type in set must be frozen : set<frozen<UDT>>
        */
     } else if (type === "SET") {
-      if (!set_type)
+      if (!setType)
         throw new Error("setType must be defined when type is set to SET");
-      if (set_type === "UDT") {
-        if (!udt_name)
+      if (setType === "UDT") {
+        if (!udtName)
           throw new Error("udt name must be defined when type is set to UDT");
 
         columnString.push(
-          `${name.toLowerCase()} set<frozen<${udt_name.toLowerCase()}>>`
+          `${name.toLowerCase()} set<frozen<${udtName.toLowerCase()}>>`
         );
-      } else if (set_type === "SET" || set_type === "MAP") {
+      } else if (setType === "SET" || setType === "MAP") {
         throw new Error("you cannot use set or map inside set");
       } else {
         columnString.push(
-          `${name.toLowerCase()} set<${set_type.toLowerCase()}>`
+          `${name.toLowerCase()} set<${setType.toLowerCase()}>`
         );
       }
       /**
@@ -49,30 +49,31 @@ export function column_stringify(columns: i_db_column[]): string {
        * frozen
        */
     } else if (type === "MAP") {
-      if (!map || !map.key_type || !map.value_type)
+      if (!map || !map.keyType || !map.valueType)
         throw new Error(
           "you must define map key value type, when column type is map"
         );
-      const { key_type, value_type } = map;
+      const { keyType, valueType } = map;
 
-      if (value_type === "UDT") {
-        if (!udt_name)
+      if (valueType === "UDT") {
+        if (!udtName)
           throw new Error("udt name must be defined when type is set to UDT");
         columnString.push(
-          `${name.toLowerCase()} map<${key_type.toLowerCase()}, frozen<${value_type.toLowerCase()}>>`
+          `${name.toLowerCase()} map<${keyType.toLowerCase()}, frozen<${valueType.toLowerCase()}>>`
         );
       } else if (
-        value_type === "SET" ||
-        value_type === "MAP" ||
-        key_type === "SET" ||
-        key_type === "MAP"
+        valueType === "SET" ||
+        valueType === "MAP" ||
+        keyType === "SET" ||
+        keyType === "MAP"
+        // ! FIXME: probably you can't add udt as keyType, needs some test
       ) {
         throw new Error(
           "you cannot use set or map as key type or value type in a map"
         );
       } else {
         columnString.push(
-          `${name.toLowerCase()} map<${key_type.toLowerCase()}, ${value_type.toLowerCase()}>`
+          `${name.toLowerCase()} map<${keyType.toLowerCase()}, ${valueType.toLowerCase()}>`
         );
       }
     } else {

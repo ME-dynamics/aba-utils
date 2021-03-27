@@ -1,33 +1,33 @@
-import { i_insert_query } from "../types";
-import { and_str, separator } from "./constant";
+import { IInsertQuery } from "../types";
+import { andStr, separator } from "./constant";
 
 /**
  * produce query to insert rows into scylla db
  * @param args
  * @returns an insert query string
  */
-export function insert_query(args: i_insert_query) {
+export function insertQuery(args: IInsertQuery) {
   const { table, version, values, lwt } = args;
-  const table_name = `${table.toLowerCase()}_${version.toLowerCase()}`;
+  const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
   const columns = [];
-  const clmn_values = [];
-  const if_clause = lwt ? `IF ${lwt.join(and_str)}` : "";
+  const clmnValues = [];
+  const ifClause = lwt ? `IF ${lwt.join(andStr)}` : "";
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
     const { column, value, self } = values[index];
     columns.push(column.toLowerCase());
     if (self) {
-      clmn_values.push(`:${column.toLowerCase()}`);
+      clmnValues.push(`:${column.toLowerCase()}`);
     } else if (typeof value === "string") {
-      clmn_values.push(`'${value}'`);
+      clmnValues.push(`'${value}'`);
     } else if (value === null) {
-      clmn_values.push("null");
+      clmnValues.push("null");
     } else {
-      clmn_values.push(value);
+      clmnValues.push(value);
     }
   }
-  return `INSERT INTO ${table_name} (${columns.join(
+  return `INSERT INTO ${tableName} (${columns.join(
     separator
-  )}) VALUES (${clmn_values.join(separator)}) ${if_clause};`;
+  )}) VALUES (${clmnValues.join(separator)}) ${ifClause};`;
 }
 

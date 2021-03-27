@@ -1,31 +1,31 @@
-import { separator, and_str } from "./constant";
-import { i_update_query } from "../types";
+import { separator, andStr } from "./constant";
+import { IUpdateQuery } from "../types";
 
 /**
  * produce query to update row in scylla db
  * @param args
  * @returns a query string
  */
-export function update_query(args: i_update_query) {
+export function updateQuery(args: IUpdateQuery) {
   const { table, version, values, where, lwt } = args;
-  const table_name = `${table.toLowerCase()}_${version.toLowerCase()}`;
-  const update_info = [];
-  const if_clause = lwt ? `IF ${lwt.join(and_str)}` : "";
+  const tableName = `${table.toLowerCase()}_${version.toLowerCase()}`;
+  const updateInfo = [];
+  const ifClause = lwt ? `IF ${lwt.join(andStr)}` : "";
   for (let index = 0; index < values.length; index++) {
     // eslint-disable-next-line security/detect-object-injection
     const { column, value, self } = values[index];
 
     if (self) {
-      update_info.push(`${column.toLowerCase()} = :${column.toLowerCase()}`);
+      updateInfo.push(`${column.toLowerCase()} = :${column.toLowerCase()}`);
     } else if (typeof value === "string") {
-      update_info.push(`${column.toLowerCase()} = '${value}'`);
+      updateInfo.push(`${column.toLowerCase()} = '${value}'`);
     } else if (value === null) {
-      update_info.push(`${column.toLowerCase()} = null`);
+      updateInfo.push(`${column.toLowerCase()} = null`);
     } else {
-      update_info.push(`${column.toLowerCase()} = ${value}`);
+      updateInfo.push(`${column.toLowerCase()} = ${value}`);
     }
   }
-  return `UPDATE ${table_name} SET ${update_info.join(
+  return `UPDATE ${tableName} SET ${updateInfo.join(
     separator
-  )} WHERE ${where.join(and_str)} ${if_clause};`;
+  )} WHERE ${where.join(andStr)} ${ifClause};`;
 }
