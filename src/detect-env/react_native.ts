@@ -1,11 +1,11 @@
-import { t_react_native_engine, t_detect_x } from '../types'
+import { tReactNativeEngine, tDetectX } from '../types'
 declare const global: {HermesInternal: null | unknown};
 
 /**
  ** detect if running in react native environment
  * @returns boolean
  */
-export function detect_react_native(): t_detect_x {
+export function detectReactNative(): tDetectX {
     try {
         if (
             typeof document === "undefined" &&
@@ -26,11 +26,11 @@ export function detect_react_native(): t_detect_x {
  ** detect if react native's javascript engine is hermes or jsc
  * @returns a string for jsc or hermes
  */
-export function react_native_engine(): t_react_native_engine {
+export function reactNativeEngine(): tReactNativeEngine {
     if (global && global.HermesInternal === null) {
-        return 'react_native_jsc';
+        return 'reactNativeJSC';
     }else {
-        return 'react_native_hermes'
+        return 'reactNativeHERMES'
     }
 }
 

@@ -1,7 +1,7 @@
-import { detect_node } from './node';
-import { detect_web } from './web';
-import { detect_react_native, react_native_engine } from './react_native';
-import { t_detect_platform } from '../types'
+import { detectNode } from './node';
+import { detectWeb } from './web';
+import { detectReactNative, reactNativeEngine } from './react_native';
+import { tDetectPlatform } from '../types'
 
 
 /**
@@ -10,12 +10,12 @@ import { t_detect_platform } from '../types'
  * @returns a string that shows what platform code is running on.
  */
 
-export function detect_env(): t_detect_platform {
-    if(detect_web()){
+export function detectEnv(): tDetectPlatform {
+    if(detectWeb()){
         return 'web';
-    } else if(detect_react_native()){
-        return react_native_engine();
-    } else if (detect_node()){
+    } else if(detectReactNative()){
+        return reactNativeEngine();
+    } else if (detectNode()){
         return 'node';
     } else {
         throw new Error('platform not recognized')

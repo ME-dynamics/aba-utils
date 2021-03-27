@@ -1,11 +1,11 @@
 
-import { t_detect_x } from '../types';
+import { tDetectX } from '../types';
 
 /**
  ** detect if environment is web
  * @returns boolean
  */
-export function detect_web(): t_detect_x {
+export function detectWeb(): tDetectX {
    try {
     if ( typeof document !== 'undefined' && typeof navigator !=='undefined' ){
 
