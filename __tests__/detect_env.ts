@@ -1,9 +1,9 @@
-import { detect_env } from "../index";
+import { detectEnv } from "../index";
 
 describe("detect env", () => {
-  it("should detect node enviremont", () => {
+  it("should detect node environment", () => {
     expect.assertions(1);
 
-    expect(detect_env()).toBe("node");
+    expect(detectEnv()).toBe("node");
   });
 });
