@@ -1,8 +1,8 @@
-import { Error_Factory } from "../../index";
+import { ErrorFactory } from "../../index";
 
-export function minutes_from_now(minutes: number, error_path: string): number {
+export function minutesFromNow(minutes: number, errorPath: string): number {
   if (minutes < 1 || !Number.isInteger(minutes))
-    throw new Error_Factory({
+    throw new ErrorFactory({
       name: "time_not_valid",
       message: "day must be integer and cannot be zero or less",
       detail: `${
@@ -12,8 +12,8 @@ export function minutes_from_now(minutes: number, error_path: string): number {
           ? "! minutes must be integer:" + `${minutes}`
           : ""
       } `,
-      path: error_path,
-      native_error: undefined,
+      path: errorPath,
+      nativeError: undefined,
     });
   return Date.now() + minutes * 60000; // every minute is 60 * 1000 milliseconds
 }
