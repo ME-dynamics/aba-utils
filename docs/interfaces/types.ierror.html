@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>i_less_than | aba-utils</title>
+	<title>IError | aba-utils</title>
 	<meta name="description" content="Documentation for aba-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -58,10 +58,10 @@
 					<a href="../modules/types.html">types</a>
 				</li>
 				<li>
-					<a href="types.i_less_than.html">i_less_than</a>
+					<a href="types.ierror.html">IError</a>
 				</li>
 			</ul>
-			<h1>Interface i_less_than</h1>
+			<h1>Interface IError</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">i_less_than</span>
+						<span class="target">IError</span>
 					</li>
 				</ul>
 			</section>
@@ -83,10 +83,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_less_than.html#argument" class="tsd-kind-icon">argument</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_less_than.html#equality" class="tsd-kind-icon">equality</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_less_than.html#less_than" class="tsd-kind-icon">less_<wbr>than</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.i_less_than.html#self" class="tsd-kind-icon">self</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.ierror.html#detail" class="tsd-kind-icon">detail</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.ierror.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.ierror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.ierror.html#nativeerror" class="tsd-kind-icon">native<wbr>Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.ierror.html#path" class="tsd-kind-icon">path</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,42 +96,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="argument" class="tsd-anchor"></a>
-					<h3>argument</h3>
-					<div class="tsd-signature tsd-kind-icon">argument<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="detail" class="tsd-anchor"></a>
+					<h3>detail</h3>
+					<div class="tsd-signature tsd-kind-icon">detail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/7b6f661/src/types/db.ts#L165">src/types/db.ts:165</a></li>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/777d638/src/types/error_factory.ts#L4">src/types/error_factory.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="equality" class="tsd-anchor"></a>
-					<h3>equality</h3>
-					<div class="tsd-signature tsd-kind-icon">equality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/7b6f661/src/types/db.ts#L166">src/types/db.ts:166</a></li>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/777d638/src/types/error_factory.ts#L3">src/types/error_factory.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="less_than" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> less_<wbr>than</h3>
-					<div class="tsd-signature tsd-kind-icon">less_<wbr>than<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/7b6f661/src/types/db.ts#L168">src/types/db.ts:168</a></li>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/777d638/src/types/error_factory.ts#L2">src/types/error_factory.ts:2</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="self" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> self</h3>
-					<div class="tsd-signature tsd-kind-icon">self<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="nativeerror" class="tsd-anchor"></a>
+					<h3>native<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">native<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/7b6f661/src/types/db.ts#L167">src/types/db.ts:167</a></li>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/777d638/src/types/error_factory.ts#L6">src/types/error_factory.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="path" class="tsd-anchor"></a>
+					<h3>path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/eyousefifar/aba-utils/blob/777d638/src/types/error_factory.ts#L5">src/types/error_factory.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -142,24 +153,6 @@
 					<li class=" ">
 						<a href="../modules.html">Exports</a>
 					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/http_result_client_error.html">http_<wbr>result_<wbr>client_<wbr>error</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/http_result_redirection.html">http_<wbr>result_<wbr>redirection</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/http_result_server_error.html">http_<wbr>result_<wbr>server_<wbr>error</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/http_result_success.html">http_<wbr>result_<wbr>success</a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="../modules/query_gen.html">query_<wbr>gen</a>
-					</li>
-					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
-						<a href="../modules/query_gen.operators.html">query_<wbr>gen.operators</a>
-					</li>
 					<li class="current tsd-kind-namespace">
 						<a href="../modules/types.html">types</a>
 					</li>
@@ -170,24 +163,39 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-namespace">
-						<a href="types.i_less_than.html" class="tsd-kind-icon">i_<wbr>less_<wbr>than</a>
+						<a href="types.ierror.html" class="tsd-kind-icon">IError</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.i_less_than.html#argument" class="tsd-kind-icon">argument</a>
+								<a href="types.ierror.html#detail" class="tsd-kind-icon">detail</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.i_less_than.html#equality" class="tsd-kind-icon">equality</a>
+								<a href="types.ierror.html#message" class="tsd-kind-icon">message</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.i_less_than.html#less_than" class="tsd-kind-icon">less_<wbr>than</a>
+								<a href="types.ierror.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types.i_less_than.html#self" class="tsd-kind-icon">self</a>
+								<a href="types.ierror.html#nativeerror" class="tsd-kind-icon">native<wbr>Error</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="types.ierror.html#path" class="tsd-kind-icon">path</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-has-type-parameter">
+						<a href="types.iresult.html" class="tsd-kind-icon">IResult</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/types.html#tdetectplatform" class="tsd-kind-icon">t<wbr>Detect<wbr>Platform</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/types.html#tdetectx" class="tsd-kind-icon">t<wbr>DetectX</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace">
+						<a href="../modules/types.html#treactnativeengine" class="tsd-kind-icon">t<wbr>React<wbr>Native<wbr>Engine</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
