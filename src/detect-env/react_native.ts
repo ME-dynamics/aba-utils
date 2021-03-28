@@ -28,9 +28,9 @@ export function detectReactNative(): tDetectX {
  */
 export function reactNativeEngine(): tReactNativeEngine {
     if (global && global.HermesInternal === null) {
-        return 'reactNativeJSC';
+        return 'react_native_jsc';
     }else {
-        return 'reactNativeHERMES'
+        return 'react_native_hermes'
     }
 }
 
