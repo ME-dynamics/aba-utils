@@ -1,7 +1,7 @@
-export interface i_error {
+export interface IError {
   name: string;
   message: string;
   detail: string | undefined;
   path: string | undefined;
-  native_error: Error | undefined;
+  nativeError: Error | undefined;
 }
