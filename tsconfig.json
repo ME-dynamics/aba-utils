@@ -62,7 +62,7 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  
+
   "exclude": [
     "**/*.d.ts",
     "build",
@@ -70,6 +70,9 @@
     "benchmarks",
     "__tests__",
     "jest.config.js",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "README.md",
+    "typedoc.json",
+    "docs"
   ]
 }
