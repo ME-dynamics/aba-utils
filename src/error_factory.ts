@@ -1,30 +1,30 @@
-import { detect_env } from "./detect-env";
-import { i_error } from "./types";
+import { detectEnv } from "./detect-env";
+import { IError } from "./types";
 
 
 /**
  ** builds a Error Class
  */
-export function build_Error_Factory() {
-  const is_node = detect_env() === "node";
-  return class Error_Factory extends Error {
-    constructor(args: i_error) {
-      const { name, message, detail, native_error, path } = args;
+export function buildErrorFactory() {
+  const isNode = detectEnv() === "node";
+  return class ErrorFactory extends Error {
+    constructor(args: IError) {
+      const { name, message, detail, nativeError, path } = args;
       super(message);
       this.name = name;
       this.message = message;
       this.detail = detail;
-      this.native_error = native_error;
+      this.nativeError = nativeError;
       this.path = path;
       this.timestamp = Date.now();
-      if (is_node) {
+      if (isNode) {
         Error.captureStackTrace(this);
       }
     }
     name: string;
     message: string;
     detail: string | undefined;
-    native_error: Error | undefined;
+    nativeError: Error | undefined;
     path: string | undefined;
     timestamp: number;
   };

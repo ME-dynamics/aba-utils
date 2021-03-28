@@ -7,7 +7,7 @@
  * @param value 
  * @returns undefined, value
  */
-export function null_to_undefined<T>(value: T) {
+export function nullToUndefined<T>(value: T) {
     if(value === null) {
         return undefined 
     } else {

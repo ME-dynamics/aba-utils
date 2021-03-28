@@ -1,4 +1,4 @@
-import { i_result } from "./types"
+import { IResult } from "./types"
 
 
 
@@ -7,7 +7,7 @@ import { i_result } from "./types"
  * for http results use http-result's functions
  * @param args an object containing success boolean, payload , error string
  */
-export function result<T>(args: i_result<T>): i_result<T> {
+export function result<T>(args: IResult<T>): IResult<T> {
     return {
         success: args.success,
         payload: args.payload,
