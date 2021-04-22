@@ -1,7 +1,7 @@
-import { secondsFromNow } from "./seconds_from_now";
-import { minutesFromNow } from "./minutes_from_now";
-import { hoursFromNow } from "./hours_from_now";
-import { daysFromNow } from "./days_from_now";
+import { secondsFromNow } from "./secondsFromNow";
+import { minutesFromNow } from "./minutesFromNow";
+import { hoursFromNow } from "./hoursFromNow";
+import { daysFromNow } from "./daysFromNow";
 
 
 export const time = {

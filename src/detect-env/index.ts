@@ -1,6 +1,6 @@
 import { detectNode } from './node';
 import { detectWeb } from './web';
-import { detectReactNative, reactNativeEngine } from './react_native';
+import { detectReactNative, reactNativeEngine } from './reactNative';
 import { tDetectPlatform } from '../types'
 
 

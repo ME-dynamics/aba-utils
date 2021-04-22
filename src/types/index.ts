@@ -1,5 +1,5 @@
-export * from "./error_factory";
+export * from "./errorFactory";
 
-export * from "./detect_env";
+export * from "./detectEnv";
 
 export * from "./result";
