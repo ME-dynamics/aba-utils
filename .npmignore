@@ -9,7 +9,8 @@ docs/
 
 __test__/
 benchmarks/
-packages/
+src/
+index.ts
 .eslintignore
 .eslintrc.js
 .gitignore
