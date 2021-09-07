@@ -3,5 +3,5 @@ export interface IError {
   message: string;
   detail: string | undefined;
   path: string | undefined;
-  nativeError: Error | undefined;
+  nativeError: any;
 }
