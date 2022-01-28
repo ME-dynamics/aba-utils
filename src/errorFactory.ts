@@ -1,7 +1,6 @@
 import { detectEnv } from "./detect-env";
 import { IError } from "./types";
 
-
 /**
  ** builds a Error Class
  */
@@ -17,8 +16,8 @@ export function buildErrorFactory() {
       this.nativeError = nativeError;
       this.path = path;
       this.timestamp = Date.now();
-      if (isNode) {
-        Error.captureStackTrace(this);
+      if (isNode && Error.captureStackTrace) {
+        Error.captureStackTrace(this, ErrorFactory);
       }
     }
     name: string;
