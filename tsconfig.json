@@ -13,7 +13,7 @@
     "node_modules",
     "benchmarks",
     "__tests__",
-    "jest.config.js",
+    "jest.config.cjs",
     ".eslintrc.js",
     "README.md",
     "typedoc.json",
