@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf build && rimraf docs/*",
     "typedoc": "typedoc --readme ./README.md",
-    "prepack": "npm run clean && tsc && npm run typedoc",
+    "prepack": "npm run clean && tsc",
     "test": "jest",
     "test:watch": "jest --watch"
   },
