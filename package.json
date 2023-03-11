@@ -1,6 +1,6 @@
 {
   "name": "aba-utils",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "node library: aba-utils",
   "exports": "./build/index.js",
   "type": "module",
