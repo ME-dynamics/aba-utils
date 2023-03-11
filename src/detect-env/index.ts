@@ -1,7 +1,7 @@
 import { detectNode } from "./node";
 import { detectWeb } from "./web";
 import { detectReactNative, reactNativeEngine } from "./reactNative";
-import { tDetectPlatform } from "../types";
+import type { tDetectPlatform } from "../types";
 
 /**
  ** detect what environment code is running on.

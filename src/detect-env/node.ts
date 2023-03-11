@@ -1,4 +1,4 @@
-import { tDetectX } from "../types";
+import type { tDetectX } from "../types";
 declare const process: { versions: { node: string } | undefined };
 
 /**

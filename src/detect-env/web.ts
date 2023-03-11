@@ -1,4 +1,4 @@
-import { tDetectX } from "../types";
+import type { tDetectX } from "../types";
 
 /**
  ** detect if environment is web

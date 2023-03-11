@@ -1,4 +1,4 @@
-import { tReactNativeEngine, tDetectX } from "../types";
+import type { tReactNativeEngine, tDetectX } from "../types";
 declare const global: { HermesInternal: null | unknown };
 
 /**

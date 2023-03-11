@@ -1,5 +1,5 @@
 import { detectEnv } from "./detect-env";
-import { IError } from "./types";
+import type { IError } from "./types";
 
 /**
  ** builds a Error Class
@@ -20,8 +20,8 @@ export function buildErrorFactory() {
         Error.captureStackTrace(this, ErrorFactory);
       }
     }
-    name: string;
-    message: string;
+    override name: string;
+    override message: string;
     detail: string | undefined;
     nativeError: Error | undefined;
     path: string | undefined;

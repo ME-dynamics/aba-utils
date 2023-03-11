@@ -1,4 +1,4 @@
-import { IResult } from "./types"
+import type { IResult } from "./types"
 
 
 
