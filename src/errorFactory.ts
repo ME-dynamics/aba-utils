@@ -2,11 +2,18 @@ import { detectEnv } from "./detect-env";
 import type { IError } from "./types";
 
 /**
- ** builds a Error Class
+ * Builds an Error Class
  */
 export function buildErrorFactory() {
   const isNode = detectEnv() === "node";
   return class ErrorFactory extends Error {
+    readonly name: string;
+    readonly message: string;
+    readonly detail: string | undefined;
+    readonly nativeError?: Error | undefined;
+    readonly path: string | undefined;
+    readonly timestamp: number;
+
     constructor(args: IError) {
       const { name, message, detail, nativeError, path } = args;
       super(message);
@@ -20,11 +27,5 @@ export function buildErrorFactory() {
         Error.captureStackTrace(this, ErrorFactory);
       }
     }
-    override name: string;
-    override message: string;
-    detail: string | undefined;
-    nativeError: Error | undefined;
-    path: string | undefined;
-    timestamp: number;
   };
 }
