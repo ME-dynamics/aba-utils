@@ -1,6 +1,6 @@
 import { ErrorFactory } from "../../index";
 
-export function minutesFromNow(minutes: number, errorPath: string): number {
+export function minutesFromNow(minutes: number): number {
   if (minutes < 1 || !Number.isInteger(minutes))
     throw new ErrorFactory({
       name: "time_not_valid",
@@ -12,7 +12,6 @@ export function minutesFromNow(minutes: number, errorPath: string): number {
           ? "! minutes must be integer:" + `${minutes}`
           : ""
       } `,
-      path: errorPath,
       nativeError: undefined,
     });
   return Date.now() + minutes * 60000; // every minute is 60 * 1000 milliseconds
